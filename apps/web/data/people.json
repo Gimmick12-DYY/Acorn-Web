@@ -1,0 +1,82 @@
+[
+  {
+    "id": "lead-pi",
+    "name": "Lead Principal Investigator",
+    "role": "PI",
+    "projectRole": "Lead PI",
+    "major": "Computer Science",
+    "bio": "Placeholder entry for the lead principal investigator of the Acorn expedition. Replace with the real PI's name, photo, and bio.",
+    "photoUrl": "",
+    "affiliation": "Lead Institution"
+  },
+  {
+    "id": "copi-hardware",
+    "name": "Co-PI (Hardware)",
+    "role": "PI",
+    "projectRole": "Co-PI",
+    "major": "Electrical & Computer Engineering",
+    "bio": "Placeholder entry for a co-principal investigator focused on neuromorphic and brain-integrated hardware. Replace with real details.",
+    "photoUrl": "",
+    "affiliation": "Partner Institution"
+  },
+  {
+    "id": "copi-systems",
+    "name": "Co-PI (Systems)",
+    "role": "PI",
+    "projectRole": "Co-PI",
+    "major": "Computer Architecture",
+    "bio": "Placeholder entry for a co-principal investigator focused on systems and architecture for very large scale integration. Replace with real details.",
+    "photoUrl": "",
+    "affiliation": "Partner Institution"
+  },
+  {
+    "id": "copi-neuro",
+    "name": "Co-PI (Neuroscience)",
+    "role": "PI",
+    "projectRole": "Co-PI",
+    "major": "Neuroscience",
+    "bio": "Placeholder entry for a co-principal investigator bringing neuroscience expertise to the expedition. Replace with real details.",
+    "photoUrl": "",
+    "affiliation": "Partner Institution"
+  },
+  {
+    "id": "partner-engineer",
+    "name": "Collaborating Engineer",
+    "role": "Partner",
+    "projectRole": "Hardware Engineering",
+    "major": "Electrical Engineering",
+    "bio": "Placeholder entry for a collaborating engineer or industry partner. Replace with real details.",
+    "photoUrl": "",
+    "affiliation": "Industry Partner"
+  },
+  {
+    "id": "phd-placeholder",
+    "name": "PhD Student",
+    "role": "PhD",
+    "projectRole": "Architecture & Hardware",
+    "major": "Computer Science, PhD",
+    "bio": "Placeholder entry for a PhD student on the project. Duplicate this entry for each PhD researcher and fill in their details.",
+    "photoUrl": "",
+    "affiliation": "Lead Institution"
+  },
+  {
+    "id": "grad-placeholder",
+    "name": "Graduate Student",
+    "role": "Graduate",
+    "projectRole": "Systems & Software",
+    "major": "Computer Engineering",
+    "bio": "Placeholder entry for a graduate (master's) student. Duplicate and edit per researcher.",
+    "photoUrl": "",
+    "affiliation": "Lead Institution"
+  },
+  {
+    "id": "ug-placeholder",
+    "name": "Undergraduate Researcher",
+    "role": "Undergraduate",
+    "projectRole": "TBD",
+    "major": "Computer Science",
+    "bio": "Placeholder entry for an undergraduate researcher. Duplicate and edit per student.",
+    "photoUrl": "",
+    "affiliation": "Lead Institution"
+  }
+]

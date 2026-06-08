@@ -1,0 +1,18 @@
+[
+  {
+    "id": "news-1",
+    "title": "Acorn project announced",
+    "date": "2025-09-01T00:00:00.000Z",
+    "summary": "The Acorn collaborative research effort kicks off, uniting investigators across institutions to explore very large scale brain integrated computer systems.",
+    "peopleIds": ["lead-pi"],
+    "status": "published"
+  },
+  {
+    "id": "news-2",
+    "title": "First all-hands research meeting held",
+    "date": "2025-10-15T00:00:00.000Z",
+    "summary": "The team gathered to align on research thrusts spanning neuromorphic hardware, systems and architecture, and algorithms and theory.",
+    "peopleIds": ["lead-pi", "copi-systems"],
+    "status": "published"
+  }
+]

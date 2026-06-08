@@ -1,0 +1,42 @@
+{
+  "collaborators": [
+    {
+      "id": "lead-institution",
+      "name": "Lead Institution",
+      "subtitle": "Lead Site",
+      "institution": "Lead Institution",
+      "logoUrl": "",
+      "description": "Placeholder for the lead institution coordinating the Acorn expedition. Replace with the real institution name, logo, and description.",
+      "url": ""
+    },
+    {
+      "id": "partner-1",
+      "name": "Partner Institution",
+      "subtitle": "Collaborating Site",
+      "institution": "Partner University",
+      "logoUrl": "",
+      "description": "Placeholder for a collaborating institution contributing to the research thrusts. Replace with real details.",
+      "url": ""
+    },
+    {
+      "id": "partner-2",
+      "name": "Partner Institution",
+      "subtitle": "Collaborating Site",
+      "institution": "Partner University",
+      "logoUrl": "",
+      "description": "Placeholder for a collaborating institution. Replace with real details.",
+      "url": ""
+    }
+  ],
+  "users": [
+    {
+      "id": "affiliate-lab",
+      "name": "Affiliated Lab",
+      "subtitle": "Affiliate",
+      "institution": "Affiliated University",
+      "logoUrl": "",
+      "description": "Placeholder for an affiliated lab or external collaborator engaging with the Acorn community. Replace with real details.",
+      "url": ""
+    }
+  ]
+}

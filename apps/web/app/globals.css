@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #B45F2B;
+  --color-bg: #FAF7F3;
+  --color-surface: #FFFFFF;
+  --color-text: #221a14;
+  --color-text-muted: #6b7280;
+  --color-border: #e5e7eb;
+}
+
+body {
+  @apply font-sans min-h-screen flex flex-col antialiased;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold tracking-tight;
+}
+
+a {
+  @apply transition-colors duration-200;
+}
+
+::selection {
+  background: rgba(180, 95, 43, 0.2);
+  color: var(--color-text);
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-2xl border border-gray-100 shadow-card;
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+  .card:hover {
+    @apply shadow-card-hover;
+    transform: translateY(-2px);
+  }
+  .section-label {
+    @apply text-xs font-semibold uppercase tracking-widest text-gray-400;
+  }
+  .btn-primary {
+    @apply inline-block bg-acorn text-white font-semibold py-3 px-8 rounded-full hover:bg-acorn-dark transition-all shadow-sm hover:shadow-md;
+  }
+  .btn-secondary {
+    @apply inline-block bg-slate-950 text-white font-semibold py-3 px-8 rounded-full hover:bg-gray-800 transition-all shadow-sm hover:shadow-md;
+  }
+  .btn-outline {
+    @apply inline-block border border-gray-200 text-gray-700 font-semibold py-3 px-8 rounded-full hover:border-acorn hover:text-acorn transition-all;
+  }
+}

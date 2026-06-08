@@ -1,0 +1,21 @@
+# Node / Next / Vercel
+node_modules/
+.next/
+out/
+.vercel/
+
+# Reference clone (template only — not part of this project)
+.ref_uncbci/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Env
+.env
+.env.local
+
+# Editor
+.vscode/
+.DS_Store
