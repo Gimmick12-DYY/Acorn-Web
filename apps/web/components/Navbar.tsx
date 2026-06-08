@@ -33,7 +33,9 @@ export function Navbar() {
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between gap-6">
           <Link href="/" className="flex items-center gap-3 shrink-0 group">
-            <AcornLogo height={36} className="brightness-0 invert group-hover:opacity-90 transition-opacity" />
+            <div className="bg-white rounded-lg p-1.5 shrink-0 group-hover:bg-white/90 transition-colors">
+              <AcornLogo height={32} />
+            </div>
             <div>
               <span className="font-bold text-lg leading-tight block">Acorn</span>
               <span className="text-[10px] uppercase tracking-widest text-white/50 hidden sm:block">

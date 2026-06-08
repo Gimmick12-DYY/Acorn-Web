@@ -8,7 +8,9 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 mb-10">
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <AcornLogo height={32} className="brightness-0 invert" />
+              <div className="bg-white rounded-lg p-1.5 shrink-0">
+                <AcornLogo height={28} />
+              </div>
               <span className="font-bold text-lg">Acorn</span>
             </div>
             <p className="text-white/60 text-sm leading-relaxed max-w-sm">
