@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { AcornLogo } from './AcornLogo';
 
 const navLinks = [
   { href: '/about', label: 'About' },
@@ -20,15 +21,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group">
           <div className="flex items-center gap-2.5">
-            <div className="w-10 h-10 rounded-full bg-acorn-dark flex items-center justify-center overflow-hidden">
-              <svg viewBox="0 0 40 40" className="w-10 h-10" fill="none" aria-hidden>
-                <circle cx="20" cy="20" r="20" fill="#2B2018" />
-                {/* Stylized acorn mark */}
-                <path d="M13 17h14a0 0 0 0 1 0 0 7 7 0 0 1-7 7h0a7 7 0 0 1-7-7 0 0 0 0 1 0 0z" fill="#B45F2B" />
-                <rect x="12" y="13" width="16" height="5" rx="2.5" fill="#E8A06A" />
-                <rect x="19" y="9" width="2" height="4" rx="1" fill="#E8A06A" />
-              </svg>
-            </div>
+            <AcornLogo height={40} className="group-hover:opacity-90 transition-opacity" />
             <div className="w-px h-8 bg-gray-200"></div>
             <span className="font-bold text-xl leading-none text-gray-900 tracking-tight group-hover:text-acorn-dark transition-colors">
               Acorn

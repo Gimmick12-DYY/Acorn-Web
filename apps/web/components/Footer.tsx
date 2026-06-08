@@ -1,4 +1,5 @@
 import React from 'react';
+import { AcornLogo } from './AcornLogo';
 
 export function Footer() {
   return (
@@ -7,9 +8,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="col-span-1 md:col-span-2 space-y-4">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-full bg-acorn-dark flex items-center justify-center">
-                <span className="text-acorn text-base font-bold leading-none">A</span>
-              </div>
+              <AcornLogo height={32} />
               <h3 className="font-bold text-lg text-gray-900">Acorn</h3>
             </div>
             <p className="text-gray-500 text-sm leading-relaxed max-w-sm">

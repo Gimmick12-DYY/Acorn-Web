@@ -1,5 +1,6 @@
 export { Navbar } from './Navbar';
 export { Footer } from './Footer';
+export { AcornLogo } from './AcornLogo';
 export { Card } from './Card';
 export { PersonCard } from './PersonCard';
 export { PartnerFlipCard } from './PartnerFlipCard';

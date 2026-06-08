@@ -62,5 +62,13 @@ be authored from the `/admin` page, which reads and writes that file directly.
 
 ## Deploying to Vercel
 
-- Set the project **Root Directory** to `apps/web`, or run `vercel link` from `apps/web`.
-- The default build command is `npm run build`.
+1. Import **`Gimmick12-DYY/Acorn-Web`** at [vercel.com/new](https://vercel.com/new).
+2. **Critical:** set **Root Directory** to **`apps/web`** (click *Edit* on the import screen).
+3. Leave **Framework Preset** as **Next.js**.
+4. Enable **Include source files outside of the Root Directory** if shown (needed for the npm workspace install).
+5. No environment variables are required.
+6. Deploy.
+
+If you see a plain Vercel **`404: NOT_FOUND`** page (not the site design), the project was almost certainly imported with the wrong root directory or the build failed. Fix it under **Project → Settings → General → Root Directory → `apps/web`**, then **Redeploy**.
+
+The repo includes `apps/web/vercel.json` with the correct monorepo install command (`cd ../.. && npm install`).
