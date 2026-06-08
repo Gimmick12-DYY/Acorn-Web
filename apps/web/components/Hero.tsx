@@ -1,39 +1,66 @@
 import React from 'react';
 import Link from 'next/link';
-import { HeroVisual } from './HeroVisual';
+import { ImageSlot } from './ImageSlot';
+
+/*
+ * Homepage images — drop files into public/images/ and set paths below.
+ *
+ *   hero.jpg      → full-width banner
+ *   overview.jpg  → overview section (left column)
+ *   cta.jpg       → bottom call-to-action (right column)
+ */
+export const HERO_IMAGE_URL: string | undefined = undefined;
+export const OVERVIEW_IMAGE_URL: string | undefined = undefined;
+export const CTA_IMAGE_URL: string | undefined = undefined;
 
 export function Hero() {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <div className="space-y-8">
-          <div className="section-label">
-            Collaborative Research &middot; Expeditions
-          </div>
+    <>
+      <ImageSlot
+        src={HERO_IMAGE_URL}
+        alt="Acorn expedition"
+        hint="public/images/hero.jpg"
+        variant="banner"
+      />
 
-          <h1 className="font-serif text-5xl md:text-6xl leading-[1.1] tracking-tight">
-            The Dawn of{' '}
-            <span className="text-acorn">Very Large Scale Brain Integrated Computer Systems</span>
+      <section className="bg-white border-b border-gray-200/80">
+        <div className="max-w-3xl mx-auto px-6 py-14 md:py-20 text-center">
+          <p className="section-label mb-4">NSF-Style Collaborative Research Expedition</p>
+          <h1 className="font-serif text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.12] text-gray-900 mb-6">
+            The Dawn of Very Large Scale Brain Integrated Computer Systems
           </h1>
-
-          <p className="text-lg text-gray-500 leading-relaxed max-w-lg">
-            Acorn is a multi-institution research expedition laying the scientific and engineering
-            foundations for computer systems that integrate with the brain at unprecedented scale —
-            bringing together neuroscience, computer architecture, and artificial intelligence.
+          <p className="text-lg text-gray-500 leading-relaxed mb-8">
+            Acorn unites investigators across neuroscience, computer architecture, and artificial
+            intelligence to lay the foundations for brain-integrated computing at unprecedented scale.
           </p>
-
-          <div className="flex flex-wrap gap-4">
-            <Link href="/about" className="btn-primary">
-              Explore the Vision
-            </Link>
-            <Link href="/people" className="btn-secondary">
-              Meet the Team
-            </Link>
+          <div className="flex flex-wrap justify-center gap-3">
+            <Link href="/about" className="btn-primary">About the Expedition</Link>
+            <Link href="/research" className="btn-outline">Research Thrusts</Link>
           </div>
         </div>
+      </section>
+    </>
+  );
+}
 
-        <HeroVisual />
-      </div>
-    </section>
+export function HomeOverviewImage() {
+  return (
+    <ImageSlot
+      src={OVERVIEW_IMAGE_URL}
+      alt="Acorn research overview"
+      hint="public/images/overview.jpg"
+      aspect="square"
+    />
+  );
+}
+
+export function HomeCtaImage() {
+  return (
+    <ImageSlot
+      src={CTA_IMAGE_URL}
+      alt="Acorn collaboration"
+      hint="public/images/cta.jpg"
+      aspect="video"
+    />
   );
 }

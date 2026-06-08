@@ -32,23 +32,38 @@ a {
 
 @layer components {
   .card {
-    @apply bg-white rounded-2xl border border-gray-100 shadow-card;
-    transition: box-shadow 0.3s, transform 0.3s;
+    @apply bg-white rounded-xl border border-gray-200/80;
+    transition: border-color 0.2s, box-shadow 0.2s;
   }
   .card:hover {
+    @apply border-acorn/30 shadow-sm;
+  }
+  .card-lift:hover {
     @apply shadow-card-hover;
     transform: translateY(-2px);
   }
   .section-label {
-    @apply text-xs font-semibold uppercase tracking-widest text-gray-400;
+    @apply text-xs font-semibold uppercase tracking-[0.2em] text-acorn;
+  }
+  .section-title {
+    @apply font-serif text-3xl md:text-4xl text-gray-900 leading-tight;
+  }
+  .accent-rule {
+    @apply w-10 h-1 bg-acorn rounded-full mb-4;
   }
   .btn-primary {
-    @apply inline-block bg-acorn text-white font-semibold py-3 px-8 rounded-full hover:bg-acorn-dark transition-all shadow-sm hover:shadow-md;
+    @apply inline-block bg-acorn text-white font-semibold py-2.5 px-6 rounded-lg hover:bg-acorn-dark transition-colors;
   }
   .btn-secondary {
-    @apply inline-block bg-slate-950 text-white font-semibold py-3 px-8 rounded-full hover:bg-gray-800 transition-all shadow-sm hover:shadow-md;
+    @apply inline-block bg-acorn-dark text-white font-semibold py-2.5 px-6 rounded-lg hover:bg-gray-900 transition-colors;
   }
   .btn-outline {
-    @apply inline-block border border-gray-200 text-gray-700 font-semibold py-3 px-8 rounded-full hover:border-acorn hover:text-acorn transition-all;
+    @apply inline-block border border-gray-300 text-gray-700 font-semibold py-2.5 px-6 rounded-lg hover:border-acorn hover:text-acorn transition-colors;
+  }
+  .btn-outline-light {
+    @apply inline-block border border-white/40 text-white font-semibold py-2.5 px-6 rounded-lg hover:bg-white/10 transition-colors;
+  }
+  .link-arrow {
+    @apply text-acorn font-medium hover:text-acorn-dark transition-colors text-sm inline-flex items-center gap-1.5;
   }
 }

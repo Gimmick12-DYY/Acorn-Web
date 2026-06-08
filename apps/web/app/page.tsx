@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { getPublishedNews } from '../lib/news';
-import { Hero } from '../components';
+import { Hero, HomeOverviewImage, HomeCtaImage } from '../components';
 import peopleData from '../data/people.json';
 
 export const dynamic = 'force-dynamic';
@@ -15,127 +15,189 @@ type Person = {
   photoUrl?: string;
 };
 
+const pillars = [
+  {
+    title: 'About',
+    description:
+      'The vision, approach, and timeline for very large scale brain integrated computer systems.',
+    href: '/about',
+  },
+  {
+    title: 'Research',
+    description:
+      'Cross-layer thrusts spanning neuromorphic hardware, systems architecture, and algorithms.',
+    href: '/research',
+  },
+  {
+    title: 'Education',
+    description:
+      'Training, curriculum, and outreach at the intersection of computing and neuroscience.',
+    href: '/education',
+  },
+];
+
 export default async function Page() {
   const allNews = await getPublishedNews();
-  const items = allNews.slice(0, 3);
+  const items = allNews.slice(0, 4);
   const pis = (peopleData as Person[]).filter((p) => p.role === 'PI');
 
   return (
     <div>
       <Hero />
 
-      <section className="bg-white border-y border-gray-100">
-        <div className="max-w-5xl mx-auto px-6 py-16 text-center">
-          <p className="section-label mb-3">Collaborative Research &middot; Expeditions</p>
-          <h2 className="font-serif text-3xl md:text-4xl text-gray-900 mb-4">
-            A new computing era at the boundary of mind and machine
-          </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed">
-            Acorn brings together researchers across institutions and disciplines to build the
-            scientific foundations and engineering practices for very large scale brain integrated
-            computer systems&mdash;from neuromorphic hardware to the algorithms and theory that make
-            brain-scale integration possible.
-          </p>
-          <div className="flex justify-center gap-6 mt-8 flex-wrap">
-            <Link href="/about" className="text-acorn font-medium hover:text-acorn-dark transition-colors text-sm inline-flex items-center gap-1 group">
-              About the expedition
-              <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
+      {/* Three pillars */}
+      <section className="bg-acorn-light/40 border-b border-acorn/10">
+        <div className="max-w-6xl mx-auto px-6 py-14 grid md:grid-cols-3 gap-6">
+          {pillars.map((pillar) => (
+            <Link
+              key={pillar.href}
+              href={pillar.href}
+              className="card p-7 group block h-full"
+            >
+              <div className="accent-rule group-hover:w-16 transition-all" />
+              <h2 className="font-serif text-xl text-gray-900 mb-2 group-hover:text-acorn transition-colors">
+                {pillar.title}
+              </h2>
+              <p className="text-gray-500 text-sm leading-relaxed mb-4">{pillar.description}</p>
+              <span className="link-arrow">
+                Learn more
+                <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
+              </span>
             </Link>
-            <Link href="/research" className="text-acorn font-medium hover:text-acorn-dark transition-colors text-sm inline-flex items-center gap-1 group">
-              Explore research
-              <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
-            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Overview — image left, text right */}
+      <section className="bg-white">
+        <div className="max-w-6xl mx-auto px-6 py-16 md:py-20">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <HomeOverviewImage />
+            <div>
+              <div className="accent-rule" />
+              <p className="section-label mb-3">The Expedition</p>
+              <h2 className="section-title mb-5">
+                A new computing era at the boundary of mind and machine
+              </h2>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Acorn brings together researchers across institutions and disciplines to build the
+                scientific foundations and engineering practices for very large scale brain integrated
+                computer systems.
+              </p>
+              <p className="text-gray-500 leading-relaxed text-sm mb-6">
+                From neuromorphic hardware to the algorithms and theory that make brain-scale
+                integration possible, the expedition is organized as an open, multi-institution effort.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link href="/people" className="link-arrow">
+                  Meet the team <span>&rarr;</span>
+                </Link>
+                <Link href="/partners" className="link-arrow">
+                  View institutions <span>&rarr;</span>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Principal Investigators */}
-      <section className="bg-white border-y border-gray-100">
-        <div className="max-w-5xl mx-auto px-6 py-16">
-          <div className="text-center mb-10">
+      {/* Leadership — compact list, not avatar grid */}
+      <section className="border-y border-gray-200/80 bg-[#F5F0EA]">
+        <div className="max-w-6xl mx-auto px-6 py-16">
+          <div className="mb-8">
+            <div className="accent-rule" />
             <p className="section-label mb-2">Leadership</p>
-            <h2 className="font-serif text-3xl text-gray-900">Principal Investigators</h2>
+            <h2 className="section-title">Principal Investigators</h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 gap-4">
             {pis.map((p) => (
-              <div key={p.id} className="text-center">
-                <div className="w-24 h-24 rounded-full bg-gray-100 mx-auto mb-3 overflow-hidden flex items-center justify-center text-gray-400">
+              <div key={p.id} className="card flex items-center gap-4 p-4">
+                <div className="w-16 h-16 rounded-lg bg-gray-100 shrink-0 overflow-hidden flex items-center justify-center text-gray-300">
                   {p.photoUrl ? (
                     <img src={p.photoUrl} alt={p.name} className="w-full h-full object-cover" />
                   ) : (
-                    <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                     </svg>
                   )}
                 </div>
-                <h3 className="font-bold text-gray-900 text-sm">{p.name}</h3>
-                <p className="text-xs text-acorn font-semibold">{p.projectRole || 'PI'}</p>
-                {p.affiliation && <p className="text-xs text-gray-400 mt-0.5">{p.affiliation}</p>}
+                <div className="min-w-0">
+                  <h3 className="font-semibold text-gray-900 text-sm leading-snug">{p.name}</h3>
+                  <p className="text-xs text-acorn font-medium mt-0.5">{p.projectRole || 'PI'}</p>
+                  {p.affiliation && (
+                    <p className="text-xs text-gray-400 mt-0.5 truncate">{p.affiliation}</p>
+                  )}
+                </div>
               </div>
             ))}
-          </div>
-          <div className="text-center mt-10">
-            <Link href="/people" className="text-acorn font-medium hover:text-acorn-dark transition-colors text-sm inline-flex items-center gap-1 group">
-              Meet the team
-              <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
-            </Link>
           </div>
         </div>
       </section>
 
-      {/* Latest updates */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
-        <div className="flex items-center justify-between mb-8">
+      {/* News — vertical list */}
+      <section className="max-w-6xl mx-auto px-6 py-16">
+        <div className="flex items-end justify-between mb-8 gap-4">
           <div>
+            <div className="accent-rule" />
             <p className="section-label mb-2">News</p>
-            <h2 className="font-serif text-3xl text-gray-900">Latest Updates</h2>
+            <h2 className="section-title">Latest Updates</h2>
           </div>
-          <Link href="/news" className="text-acorn font-medium hover:text-acorn-dark transition-colors text-sm inline-flex items-center gap-1 group">
-            View all
-            <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
+          <Link href="/news" className="link-arrow shrink-0">
+            All updates <span>&rarr;</span>
           </Link>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="card divide-y divide-gray-100 overflow-hidden">
           {items.map((item) => (
-            <Link href={`/news/${item.id}`} key={item.id} className="block group">
-              <div className="card p-6 h-full flex flex-col">
-                <div className="text-xs font-semibold text-acorn uppercase tracking-wide mb-3">
-                  {new Date(item.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-acorn-dark transition-colors leading-snug">
+            <Link
+              href={`/news/${item.id}`}
+              key={item.id}
+              className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-8 p-6 hover:bg-acorn-light/20 transition-colors group"
+            >
+              <time className="text-xs font-mono text-acorn shrink-0 sm:w-28 pt-0.5">
+                {new Date(item.date).toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'short',
+                  day: 'numeric',
+                })}
+              </time>
+              <div className="flex-1 min-w-0">
+                <h3 className="font-semibold text-gray-900 group-hover:text-acorn transition-colors leading-snug mb-1">
                   {item.title}
                 </h3>
                 {item.summary && (
-                  <p className="text-gray-500 text-sm leading-relaxed line-clamp-3 mb-4 flex-grow">
-                    {item.summary}
-                  </p>
+                  <p className="text-gray-500 text-sm leading-relaxed line-clamp-2">{item.summary}</p>
                 )}
-                <div className="mt-auto pt-4 border-t border-gray-50">
-                  <span className="text-xs font-semibold text-gray-400 group-hover:text-acorn transition-colors flex items-center gap-1">
-                    Read more &rarr;
-                  </span>
-                </div>
               </div>
             </Link>
           ))}
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-acorn-dark text-white">
-        <div className="max-w-7xl mx-auto px-6 py-16 text-center">
-          <h2 className="font-serif text-3xl md:text-4xl mb-4">Interested in our work?</h2>
-          <p className="text-gray-300 max-w-2xl mx-auto mb-8">
-            Acorn is an open, collaborative expedition. Explore our research thrusts, browse
-            publications, or get in touch to partner with us.
-          </p>
-          <div className="flex justify-center gap-4 flex-wrap">
-            <Link href="/research" className="inline-block bg-white text-acorn-dark font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition-all shadow-sm">
-              Explore Research
-            </Link>
-            <Link href="/partners" className="inline-block border border-white/30 text-white font-semibold py-3 px-8 rounded-full hover:bg-white/10 transition-all">
-              View Institutions
-            </Link>
+      {/* CTA — split layout with image slot */}
+      <section className="bg-acorn-dark text-white border-t border-acorn-dark">
+        <div className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50 mb-4">
+              Get Involved
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl mb-4 leading-tight">
+              Join the expedition
+            </h2>
+            <p className="text-white/70 leading-relaxed mb-8 text-sm">
+              Acorn is an open, collaborative research effort. Explore our thrusts, browse
+              publications, or reach out to partner with us.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/research" className="inline-block bg-white text-acorn-dark font-semibold py-2.5 px-6 rounded-lg hover:bg-gray-100 transition-colors text-sm">
+                Explore Research
+              </Link>
+              <Link href="/partners" className="btn-outline-light text-sm">
+                View Institutions
+              </Link>
+            </div>
+          </div>
+          <div className="rounded-xl overflow-hidden ring-1 ring-white/10">
+            <HomeCtaImage />
           </div>
         </div>
       </section>

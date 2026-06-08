@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import partnersData from '../../data/partners.json';
-import { PartnerFlipCard } from '../../components/PartnerFlipCard';
+import { PartnerFlipCard, PageHeader } from '../../components';
 import type { PartnerFlipCardProps } from '../../components/PartnerFlipCard';
 
 export const metadata = {
@@ -55,18 +55,13 @@ export default function PartnersPage() {
 
   return (
     <div>
-      <section className="bg-white border-b border-gray-100">
-        <div className="max-w-5xl mx-auto px-6 py-16 md:py-20 text-center">
-          <p className="section-label mb-3">Ecosystem</p>
-          <h1 className="font-serif text-4xl md:text-5xl text-gray-900 mb-4">Institutions</h1>
-          <p className="text-xl text-gray-500 max-w-2xl mx-auto">
-            Acorn is a collaborative expedition spanning multiple institutions and partner labs working
-            together to advance brain-integrated computing.
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        label="Ecosystem"
+        title="Institutions"
+        description="Acorn is a collaborative expedition spanning multiple institutions and partner labs working together to advance brain-integrated computing."
+      />
 
-      <div className="max-w-7xl mx-auto px-6 py-8">
+      <div className="max-w-6xl mx-auto px-6 py-8">
         <PartnerSection
           title="Collaborating Institutions"
           description="Institutions contributing to the Acorn expedition. Hover a card to view details."
@@ -79,7 +74,7 @@ export default function PartnersPage() {
         />
       </div>
 
-      <section className="max-w-5xl mx-auto px-6 py-16 text-center">
+      <section className="max-w-6xl mx-auto px-6 py-16 text-center">
         <h2 className="font-serif text-2xl text-gray-900 mb-4">Want to collaborate?</h2>
         <p className="text-gray-500 max-w-lg mx-auto mb-8">
           Get in touch with our team to discuss research collaborations, partnerships, or other

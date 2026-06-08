@@ -1,6 +1,6 @@
 import React from 'react';
 import peopleData from '../../data/people.json';
-import { PersonCard } from '../../components';
+import { PersonCard, PageHeader } from '../../components';
 
 type Person = {
   id: string;
@@ -52,18 +52,13 @@ export default function PeoplePage() {
 
   return (
     <div>
-      <section className="bg-white border-b border-gray-100">
-        <div className="max-w-5xl mx-auto px-6 py-16 md:py-20 text-center">
-          <p className="section-label mb-3">Team</p>
-          <h1 className="font-serif text-4xl md:text-5xl text-gray-900 mb-4">Our People</h1>
-          <p className="text-xl text-gray-500 max-w-2xl mx-auto">
-            Meet the investigators, partners, and students driving the Acorn expedition. Hover a card
-            to read each person&rsquo;s bio.
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        label="Team"
+        title="Our People"
+        description="Investigators, partners, and students driving the Acorn expedition. Hover a card to read each person's bio."
+      />
 
-      <div className="max-w-7xl mx-auto px-6 py-8 space-y-4">
+      <div className="max-w-6xl mx-auto px-6 py-8 space-y-4">
         <Section title="Principal Investigators">
           {pi.map(p => <PersonCard key={p.id} {...p} />)}
         </Section>
@@ -81,7 +76,7 @@ export default function PeoplePage() {
         </Section>
       </div>
 
-      <p className="max-w-7xl mx-auto px-6 pb-12 text-center text-xs text-gray-400 italic">
+      <p className="max-w-6xl mx-auto px-6 pb-12 text-center text-xs text-gray-400 italic">
         The roster above contains placeholder entries. Edit <code>apps/web/data/people.json</code> to
         add the real team, photos (place images in <code>public/people/</code>), and bios.
       </p>

@@ -3,69 +3,69 @@ import { AcornLogo } from './AcornLogo';
 
 export function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-100 mt-auto">
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          <div className="col-span-1 md:col-span-2 space-y-4">
-            <div className="flex items-center gap-2.5">
-              <AcornLogo height={32} />
-              <h3 className="font-bold text-lg text-gray-900">Acorn</h3>
+    <footer className="bg-[#1a1410] text-white mt-auto">
+      <div className="max-w-6xl mx-auto px-6 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 mb-10">
+          <div className="md:col-span-5 space-y-4">
+            <div className="flex items-center gap-3">
+              <AcornLogo height={32} className="brightness-0 invert" />
+              <span className="font-bold text-lg">Acorn</span>
             </div>
-            <p className="text-gray-500 text-sm leading-relaxed max-w-sm">
-              Acorn: The Dawn of Very Large Scale Brain Integrated Computer Systems — a collaborative
+            <p className="text-white/60 text-sm leading-relaxed max-w-sm">
+              The Dawn of Very Large Scale Brain Integrated Computer Systems — a collaborative
               research expedition uniting neuroscience, computer architecture, and AI.
-            </p>
-            <p className="text-xs text-gray-400 leading-relaxed">
-              Collaborative Research conducted in the spirit of the{' '}
-              <a
-                href="https://www.nsf.gov/funding/opportunities/expeditions-expeditions-computing"
-                target="_blank"
-                rel="noreferrer"
-                className="text-acorn hover:text-acorn-dark transition-colors"
-              >
-                NSF Expeditions in Computing
-              </a>{' '}
-              program.
             </p>
           </div>
 
-          <div className="space-y-4">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-400">Pages</h4>
-            <ul className="space-y-2">
-              <li><a href="/about" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">About</a></li>
-              <li><a href="/research" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">Research</a></li>
-              <li><a href="/education" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">Education</a></li>
-              <li><a href="/publications" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">Publications</a></li>
-              <li><a href="/people" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">People</a></li>
-              <li><a href="/partners" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">Institutions</a></li>
+          <div className="md:col-span-3 space-y-3">
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-white/40">Explore</h4>
+            <ul className="space-y-2 text-sm">
+              {[
+                ['About', '/about'],
+                ['Research', '/research'],
+                ['Education', '/education'],
+                ['Publications', '/publications'],
+                ['People', '/people'],
+                ['Institutions', '/partners'],
+                ['News', '/news'],
+              ].map(([label, href]) => (
+                <li key={href}>
+                  <a href={href} className="text-white/60 hover:text-white transition-colors">
+                    {label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          <div className="space-y-4">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-400">Links</h4>
-            <ul className="space-y-2">
+          <div className="md:col-span-4 space-y-3">
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-white/40">Connect</h4>
+            <ul className="space-y-2 text-sm">
               <li>
-                <a href="/news" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">
-                  Project News
+                <a
+                  href="https://www.nsf.gov/funding/opportunities/expeditions-expeditions-computing"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-white/60 hover:text-white transition-colors"
+                >
+                  NSF Expeditions in Computing
                 </a>
               </li>
               <li>
-                <a href="https://www.nsf.gov/cise/ccf/expeditions-awards" target="_blank" rel="noreferrer" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">
-                  Expeditions Awards
-                </a>
-              </li>
-              <li>
-                <a href="mailto:contact@acorn-expedition.org" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">
-                  Contact
+                <a
+                  href="mailto:contact@acorn-expedition.org"
+                  className="text-white/60 hover:text-white transition-colors"
+                >
+                  contact@acorn-expedition.org
                 </a>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Acorn Project. All rights reserved.</p>
-          <p className="mt-2 md:mt-0">Collaborative Research &middot; Very Large Scale Brain Integrated Computer Systems</p>
+        <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between gap-2 text-xs text-white/40">
+          <p>&copy; {new Date().getFullYear()} Acorn Project</p>
+          <p>Collaborative Research Expedition</p>
         </div>
       </div>
     </footer>

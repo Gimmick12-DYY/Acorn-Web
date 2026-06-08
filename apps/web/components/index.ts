@@ -1,9 +1,10 @@
 export { Navbar } from './Navbar';
-export { Footer } from './Footer';
+export { PageHeader } from './PageHeader';
+export { Hero, HomeOverviewImage, HomeCtaImage } from './Hero';
+export { ImageSlot } from './ImageSlot';
 export { AcornLogo } from './AcornLogo';
+export { Footer } from './Footer';
 export { Card } from './Card';
 export { PersonCard } from './PersonCard';
 export { PartnerFlipCard } from './PartnerFlipCard';
-export { Hero } from './Hero';
-export { HeroVisual } from './HeroVisual';
 export { CapabilityGrid } from './CapabilityGrid';

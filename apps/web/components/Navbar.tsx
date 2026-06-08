@@ -11,71 +11,83 @@ const navLinks = [
   { href: '/publications', label: 'Publications' },
   { href: '/people', label: 'People' },
   { href: '/partners', label: 'Institutions' },
+  { href: '/news', label: 'News' },
 ];
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="flex items-center gap-2.5">
-            <AcornLogo height={40} className="group-hover:opacity-90 transition-opacity" />
-            <div className="w-px h-8 bg-gray-200"></div>
-            <span className="font-bold text-xl leading-none text-gray-900 tracking-tight group-hover:text-acorn-dark transition-colors">
-              Acorn
-            </span>
-          </div>
-        </Link>
-
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <NavLink key={link.href} href={link.href}>{link.label}</NavLink>
-          ))}
-          <Link
-            href="mailto:contact@acorn-expedition.org?subject=Acorn%20Inquiry"
-            className="text-sm font-semibold text-white bg-acorn hover:bg-acorn-dark px-4 py-2 rounded-lg transition-colors"
-          >
-            Contact Us
+    <header className="sticky top-0 z-50 bg-acorn-dark text-white shadow-md">
+      {/* Top bar */}
+      <div className="border-b border-white/10">
+        <div className="max-w-6xl mx-auto px-6 py-2 flex items-center justify-between text-xs text-white/60">
+          <span>Collaborative Research &middot; Expeditions in Computing</span>
+          <Link href="/admin" className="hover:text-white/90 transition-colors italic">
+            Admin
           </Link>
-          <Link
-            href="/admin"
-            className="text-sm text-gray-400 italic hover:text-acorn transition-colors"
-          >
-            /Admin
-          </Link>
-        </nav>
-
-        {/* Mobile hamburger */}
-        <button
-          className="md:hidden text-gray-600 focus:outline-none"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle navigation menu"
-        >
-          {mobileOpen ? (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          ) : (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          )}
-        </button>
+        </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Main nav */}
+      <div className="max-w-6xl mx-auto px-6 py-4">
+        <div className="flex items-center justify-between gap-6">
+          <Link href="/" className="flex items-center gap-3 shrink-0 group">
+            <AcornLogo height={36} className="brightness-0 invert group-hover:opacity-90 transition-opacity" />
+            <div>
+              <span className="font-bold text-lg leading-tight block">Acorn</span>
+              <span className="text-[10px] uppercase tracking-widest text-white/50 hidden sm:block">
+                Brain Integrated Systems
+              </span>
+            </div>
+          </Link>
+
+          <nav className="hidden lg:flex items-center gap-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="px-3 py-2 text-sm font-medium text-white/75 hover:text-white hover:bg-white/10 rounded-md transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          <Link
+            href="mailto:contact@acorn-expedition.org?subject=Acorn%20Inquiry"
+            className="hidden sm:inline-block text-sm font-semibold btn-outline-light shrink-0"
+          >
+            Contact
+          </Link>
+
+          <button
+            className="lg:hidden text-white/80 focus:outline-none p-1"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle navigation menu"
+          >
+            {mobileOpen ? (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
+        </div>
+      </div>
+
       {mobileOpen && (
-        <nav className="md:hidden border-t border-gray-100 bg-white">
-          <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-3">
+        <nav className="lg:hidden border-t border-white/10 bg-acorn-dark">
+          <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="text-base font-medium text-gray-700 hover:text-gray-900 py-2 transition-colors"
+                className="text-base font-medium text-white/80 hover:text-white py-2.5 px-2 rounded-md hover:bg-white/10 transition-colors"
               >
                 {link.label}
               </Link>
@@ -83,32 +95,13 @@ export function Navbar() {
             <Link
               href="mailto:contact@acorn-expedition.org?subject=Acorn%20Inquiry"
               onClick={() => setMobileOpen(false)}
-              className="text-base font-semibold text-white bg-acorn hover:bg-acorn-dark px-4 py-2.5 rounded-lg transition-colors text-center mt-1"
+              className="text-base font-semibold btn-outline-light text-center mt-2"
             >
-              Contact Us
-            </Link>
-            <Link
-              href="/admin"
-              onClick={() => setMobileOpen(false)}
-              className="text-sm text-gray-400 italic hover:text-acorn transition-colors py-2"
-            >
-              /Admin
+              Contact
             </Link>
           </div>
         </nav>
       )}
     </header>
-  );
-}
-
-function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
-  return (
-    <Link
-      href={href}
-      className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors relative group"
-    >
-      {children}
-      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-acorn transition-all duration-300 group-hover:w-full"></span>
-    </Link>
   );
 }

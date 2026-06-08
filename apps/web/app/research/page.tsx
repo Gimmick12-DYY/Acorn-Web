@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { PageHeader } from '../../components';
 
 export const metadata = {
   title: 'Research | Acorn',
@@ -58,21 +59,13 @@ const enables = [
 export default function ResearchPage() {
   return (
     <div>
-      <section className="bg-white border-b border-gray-100">
-        <div className="max-w-5xl mx-auto px-6 py-16 md:py-24 text-center">
-          <p className="section-label mb-3">Research Thrusts</p>
-          <h1 className="font-serif text-4xl md:text-5xl text-gray-900 mb-6 leading-tight">
-            Research
-          </h1>
-          <p className="text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed">
-            Acorn&rsquo;s research is organized into interlocking thrusts that span the full computing
-            stack&mdash;from devices and circuits to systems, algorithms, and the neuroscience that
-            grounds it all.
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        label="Research Thrusts"
+        title="Research"
+        description="Acorn's research is organized into interlocking thrusts that span the full computing stack — from devices and circuits to systems, algorithms, and the neuroscience that grounds it all."
+      />
 
-      <section className="max-w-5xl mx-auto px-6 py-16">
+      <section className="max-w-6xl mx-auto px-6 py-16">
         <div className="grid md:grid-cols-3 gap-12 mb-4">
           <div className="md:col-span-1">
             <p className="section-label mb-2">Overview</p>

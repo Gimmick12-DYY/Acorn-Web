@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { CapabilityGrid } from '../../components/CapabilityGrid';
+import { CapabilityGrid, PageHeader } from '../../components';
 
 export const metadata = {
   title: 'About | Acorn',
@@ -18,25 +18,13 @@ const timeline = [
 export default function AboutPage() {
   return (
     <div>
-      {/* Hero */}
-      <section className="bg-white border-b border-gray-100">
-        <div className="max-w-5xl mx-auto px-6 py-16 md:py-24 text-center">
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-acorn/10 text-acorn text-sm font-semibold mb-6">
-            Collaborative Research &middot; Expeditions
-          </span>
-          <h1 className="font-serif text-4xl md:text-5xl text-gray-900 mb-6 leading-tight">
-            The Dawn of Very Large Scale Brain Integrated Computer Systems
-          </h1>
-          <p className="text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed">
-            Acorn is a multi-institution research expedition that aims to define a new field at the
-            intersection of neuroscience, computer architecture, and artificial intelligence&mdash;
-            building the foundations for computer systems that integrate with the brain at
-            unprecedented scale.
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        label="Collaborative Research · Expeditions"
+        title="The Dawn of Very Large Scale Brain Integrated Computer Systems"
+        description="Acorn is a multi-institution research expedition that aims to define a new field at the intersection of neuroscience, computer architecture, and artificial intelligence."
+      />
 
-      <section className="bg-gray-50 border-y border-gray-100">
+      <section className="bg-acorn-light/30 border-b border-acorn/10">
         <div className="max-w-7xl mx-auto px-6 py-16">
           <div className="text-center mb-12">
             <p className="section-label mb-3">Why Acorn</p>

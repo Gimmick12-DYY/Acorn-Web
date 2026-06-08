@@ -1,5 +1,6 @@
 import React from 'react';
 import publications from '../../data/publications.json';
+import { PageHeader } from '../../components';
 
 type Publication = {
   id: string;
@@ -20,18 +21,13 @@ export default function PublicationsPage() {
 
   return (
     <div>
-      <section className="bg-white border-b border-gray-100">
-        <div className="max-w-5xl mx-auto px-6 py-16 md:py-20 text-center">
-          <p className="section-label mb-3">Publications</p>
-          <h1 className="font-serif text-4xl md:text-5xl text-gray-900 mb-4">Publications</h1>
-          <p className="text-xl text-gray-500 max-w-2xl mx-auto">
-            Research from the Acorn expedition across computer architecture, systems, algorithms, and
-            neuroscience.
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        label="Publications"
+        title="Research Output"
+        description="Research from the Acorn expedition across computer architecture, systems, algorithms, and neuroscience."
+      />
 
-      <section className="max-w-5xl mx-auto px-6 py-12">
+      <section className="max-w-6xl mx-auto px-6 py-12">
         <div className="space-y-4">
           {pubs.map((p) => (
             <article key={p.id} className="card p-6 flex flex-col md:flex-row gap-4">
