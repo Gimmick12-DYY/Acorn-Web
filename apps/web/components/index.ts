@@ -1,7 +1,8 @@
 export { Navbar } from './Navbar';
 export { PageHeader } from './PageHeader';
-export { Hero, HomeOverviewImage, HomeCtaImage } from './Hero';
+export { Hero, HERO_IMAGE_URL } from './Hero';
 export { ImageSlot } from './ImageSlot';
+export { NsfAcknowledgment } from './NsfAcknowledgment';
 export { AcornLogo } from './AcornLogo';
 export { Footer } from './Footer';
 export { Card } from './Card';

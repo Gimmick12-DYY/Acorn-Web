@@ -1,4 +1,1 @@
-# Drop homepage images here, then set paths in components/Hero.tsx:
-#   hero.jpg      → HERO_IMAGE_URL
-#   overview.jpg  → OVERVIEW_IMAGE_URL
-#   cta.jpg       → CTA_IMAGE_URL
+# Homepage banner — set HERO_IMAGE_URL in components/Hero.tsx (e.g. '/images/hero.jpg').

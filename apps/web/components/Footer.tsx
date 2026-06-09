@@ -1,5 +1,6 @@
 import React from 'react';
 import { AcornLogo } from './AcornLogo';
+import { NsfAcknowledgment } from './NsfAcknowledgment';
 
 export function Footer() {
   return (
@@ -17,6 +18,7 @@ export function Footer() {
               The Dawn of Very Large Scale Brain Integrated Computer Systems — a collaborative
               research expedition uniting neuroscience, computer architecture, and AI.
             </p>
+            <NsfAcknowledgment variant="footer" />
           </div>
 
           <div className="md:col-span-3 space-y-3">

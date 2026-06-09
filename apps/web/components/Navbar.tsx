@@ -5,12 +5,12 @@ import Link from 'next/link';
 import { AcornLogo } from './AcornLogo';
 
 const navLinks = [
+  { href: '/news', label: 'News' },
   { href: '/about', label: 'About' },
   { href: '/research', label: 'Research' },
   { href: '/people', label: 'People' },
   { href: '/publications', label: 'Publications' },
   { href: '/outreach', label: 'Outreach' },
-  { href: '/news', label: 'News' },
 ];
 
 export function Navbar() {
@@ -21,7 +21,7 @@ export function Navbar() {
       {/* Top bar */}
       <div className="border-b border-white/10">
         <div className="max-w-6xl mx-auto px-6 py-2 flex items-center justify-between text-xs text-white/60">
-          <span>Collaborative Research &middot; Expeditions in Computing</span>
+          <span>NSF Expeditions in Computing &middot; Collaborative Research</span>
           <Link href="/admin" className="hover:text-white/90 transition-colors italic">
             Admin
           </Link>
@@ -48,7 +48,11 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-3 py-2 text-sm font-medium text-white/75 hover:text-white hover:bg-white/10 rounded-md transition-colors"
+                className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                  link.href === '/news'
+                    ? 'text-white bg-white/15 hover:bg-white/20'
+                    : 'text-white/75 hover:text-white hover:bg-white/10'
+                }`}
               >
                 {link.label}
               </Link>
