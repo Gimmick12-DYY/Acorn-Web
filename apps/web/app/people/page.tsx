@@ -76,10 +76,6 @@ export default function PeoplePage() {
         </Section>
       </div>
 
-      <p className="max-w-6xl mx-auto px-6 pb-12 text-center text-xs text-gray-400 italic">
-        The roster above contains placeholder entries. Edit <code>apps/web/data/people.json</code> to
-        add the real team, photos (place images in <code>public/people/</code>), and bios.
-      </p>
     </div>
   );
 }

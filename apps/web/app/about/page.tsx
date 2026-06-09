@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { CapabilityGrid, PageHeader } from '../../components';
-import { broaderImpacts, institutions, overview } from '../../content/site';
+import { broaderImpacts, institutions, overview, vision } from '../../content/site';
 
 export const metadata = {
   title: 'About | Acorn',
@@ -28,6 +28,21 @@ export default function AboutPage() {
           {overview.paragraphs.map((paragraph) => (
             <p key={paragraph.slice(0, 40)}>{paragraph}</p>
           ))}
+        </div>
+      </section>
+
+      <section className="bg-[#F5F0EA] border-y border-gray-200/80">
+        <div className="max-w-6xl mx-auto px-6 py-16">
+          <div className="mb-10">
+            <div className="accent-rule" />
+            <p className="section-label mb-2">Overarching Vision</p>
+            <h2 className="font-serif text-2xl text-gray-900">Closing the BCI computing gap</h2>
+          </div>
+          <div className="space-y-6 text-gray-600 leading-relaxed max-w-3xl">
+            {vision.paragraphs.map((paragraph) => (
+              <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+            ))}
+          </div>
         </div>
       </section>
 

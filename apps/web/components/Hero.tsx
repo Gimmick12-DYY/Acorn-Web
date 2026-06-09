@@ -9,9 +9,9 @@ import { ImageSlot } from './ImageSlot';
  *   overview.jpg  → overview section (left column)
  *   cta.jpg       → bottom call-to-action (right column)
  */
-export const HERO_IMAGE_URL: string | undefined = undefined;
-export const OVERVIEW_IMAGE_URL: string | undefined = undefined;
-export const CTA_IMAGE_URL: string | undefined = undefined;
+export const HERO_IMAGE_URL: string | undefined = '/images/hero.jpg';
+export const OVERVIEW_IMAGE_URL: string | undefined = '/images/overview.jpg';
+export const CTA_IMAGE_URL: string | undefined = '/images/cta.jpg';
 
 export function Hero() {
   return (

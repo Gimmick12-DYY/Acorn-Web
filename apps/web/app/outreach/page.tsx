@@ -1,31 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
 import { PageHeader } from '../../components';
-import { broaderImpacts } from '../../content/site';
+import { broaderImpacts, outreachPrograms } from '../../content/site';
 
 export const metadata = {
   title: 'Outreach | Acorn',
   description:
     'Outreach, education, and broader impacts of the Acorn VLBI expedition.',
 };
-
-const outreachThemes = [
-  {
-    title: 'Workforce Development',
-    description:
-      'Nucleating a new workforce at the intersection of computing, neuroengineering, and bioethics.',
-  },
-  {
-    title: 'Technology Transfer',
-    description:
-      'Translating research results into industry through startup formation and collaboration.',
-  },
-  {
-    title: 'Organizational Ethics',
-    description:
-      'Integrating ethical deliberation and best practices within industry and research organizations.',
-  },
-];
 
 export default function OutreachPage() {
   return (
@@ -48,13 +30,32 @@ export default function OutreachPage() {
           ))}
         </div>
 
-        <div className="grid sm:grid-cols-3 gap-6">
-          {outreachThemes.map((theme) => (
-            <div key={theme.title} className="card p-6">
-              <h3 className="font-serif text-lg text-gray-900 mb-2">{theme.title}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{theme.description}</p>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {outreachPrograms.map((program) => (
+            <div key={program.title} className="card p-6">
+              <h3 className="font-serif text-lg text-gray-900 mb-2">{program.title}</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">{program.description}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="bg-[#F5F0EA] border-y border-gray-200/80">
+        <div className="max-w-6xl mx-auto px-6 py-16">
+          <div className="grid md:grid-cols-3 gap-8 text-center">
+            <div>
+              <p className="text-3xl font-bold text-acorn mb-1">120M+</p>
+              <p className="text-sm text-gray-600">People who could benefit from BCIs globally</p>
+            </div>
+            <div>
+              <p className="text-3xl font-bold text-acorn mb-1">200K+</p>
+              <p className="text-sm text-gray-600">Annual museum visitors reached through exhibits</p>
+            </div>
+            <div>
+              <p className="text-3xl font-bold text-acorn mb-1">5</p>
+              <p className="text-sm text-gray-600">Institutions nucleating a neurotechnology workforce</p>
+            </div>
+          </div>
         </div>
       </section>
 

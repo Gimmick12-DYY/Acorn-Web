@@ -1,7 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { PageHeader } from '../../components';
-import { disciplines, intellectualMerit } from '../../content/site';
+import { designGoals, disciplines, intellectualMerit, researchThrusts } from '../../content/site';
 
 export const metadata = {
   title: 'Research | Acorn',
@@ -33,18 +34,84 @@ export default function ResearchPage() {
 
       <section className="bg-[#F5F0EA] border-y border-gray-200/80">
         <div className="max-w-6xl mx-auto px-6 py-16">
+          <div className="grid md:grid-cols-2 gap-10 items-start">
+            <div>
+              <div className="accent-rule" />
+              <p className="section-label mb-2">Research Map</p>
+              <h2 className="font-serif text-2xl text-gray-900 mb-4">Five integrated thrusts</h2>
+              <p className="text-gray-600 leading-relaxed text-sm">
+                Acorn organizes computing research across four technical thrusts—MoMA, hardware,
+                systems software, and wireless integration—validated through rodent brain interfacing
+                and integrated with dedicated ethics and education efforts.
+              </p>
+            </div>
+            <div className="rounded-xl overflow-hidden border border-gray-200/80 bg-white shadow-sm">
+              <Image
+                src="/images/figure-research-map.png"
+                alt="Acorn research thrusts and team organization"
+                width={1170}
+                height={975}
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="max-w-6xl mx-auto px-6 py-16">
+        <div className="mb-10">
+          <div className="accent-rule" />
+          <p className="section-label mb-2">Research Thrusts</p>
+          <h2 className="font-serif text-2xl text-gray-900">Technical research areas</h2>
+        </div>
+        <div className="space-y-6">
+          {researchThrusts.map((thrust) => (
+            <div key={thrust.id} className="card p-6 md:p-8">
+              <div className="flex items-start gap-4">
+                <span className="shrink-0 w-10 h-10 rounded-xl bg-acorn/10 text-acorn font-bold flex items-center justify-center text-sm">
+                  T{thrust.number}
+                </span>
+                <div>
+                  <h3 className="font-serif text-xl text-gray-900 mb-1">{thrust.title}</h3>
+                  <p className="text-xs text-acorn font-medium mb-3">{thrust.leaders}</p>
+                  <p className="text-gray-600 leading-relaxed text-sm">{thrust.summary}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-acorn-light/30 border-y border-acorn/10">
+        <div className="max-w-6xl mx-auto px-6 py-16">
           <div className="mb-8">
             <div className="accent-rule" />
-            <p className="section-label mb-2">Disciplines</p>
-            <h2 className="font-serif text-2xl text-gray-900">Cross-disciplinary expertise</h2>
+            <p className="section-label mb-2">Design Goals</p>
+            <h2 className="font-serif text-2xl text-gray-900">Acorn system requirements</h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {disciplines.map((d) => (
-              <div key={d} className="card px-5 py-4 text-sm font-medium text-gray-700">
-                {d}
+          <div className="grid sm:grid-cols-2 gap-4">
+            {designGoals.map((goal) => (
+              <div key={goal} className="card px-5 py-4 text-sm text-gray-700 leading-relaxed flex gap-3">
+                <span className="text-acorn shrink-0 mt-0.5">&#9679;</span>
+                {goal}
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="max-w-6xl mx-auto px-6 py-16">
+        <div className="mb-8">
+          <div className="accent-rule" />
+          <p className="section-label mb-2">Disciplines</p>
+          <h2 className="font-serif text-2xl text-gray-900">Cross-disciplinary expertise</h2>
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {disciplines.map((d) => (
+            <div key={d} className="card px-5 py-4 text-sm font-medium text-gray-700">
+              {d}
+            </div>
+          ))}
         </div>
       </section>
 

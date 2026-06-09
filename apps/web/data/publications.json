@@ -1,9 +1,49 @@
 [
   {
-    "id": "placeholder-2025",
-    "title": "Toward Very Large Scale Brain Integrated Computer Systems (Placeholder)",
+    "id": "halo-micro-2023",
+    "title": "HALO: A Hardware-Software Co-Designed Processor for Brain-Computer Interfaces",
+    "authors": ["K. Sriram", "X. Wen", "I. Karageorgos", "J. Veselý", "N. Lindsay", "M. Wu", "L. Khazan", "R. P. Pothukuchi", "R. Manohar", "A. Bhattacharjee"],
+    "venue": "IEEE Micro (Top Picks from ISCA 2020)",
+    "year": 2023,
+    "url": "https://doi.org/10.1109/MM.2023.3267898"
+  },
+  {
+    "id": "halo-isca-2020",
+    "title": "Hardware-Software Co-Design for Brain-Computer Interfaces",
+    "authors": ["I. Karageorgos", "K. Sriram", "J. Veselý", "M. Wu", "M. Powell", "D. Borton", "R. Manohar", "A. Bhattacharjee"],
+    "venue": "ISCA 2020",
+    "year": 2020,
+    "url": "https://doi.org/10.1109/ISCA45697.2020.00042"
+  },
+  {
+    "id": "scalo-isca-2023",
+    "title": "ScalO: An Accelerator-Rich Distributed System for Scalable Brain-Computer Interfacing",
+    "authors": ["K. Sriram", "R. P. Pothukuchi", "M. Gerasimiuk", "M. Ugur", "O. Ye", "R. Manohar", "A. Khandelwal", "A. Bhattacharjee"],
+    "venue": "ISCA 2023 (Best Paper Award)",
+    "year": 2023,
+    "url": ""
+  },
+  {
+    "id": "distill-asplos-2024",
+    "title": "Distill: Domain-Specific Compilation for Cognitive Models",
+    "authors": ["J. Veselý", "R. P. Pothukuchi", "K. Joshi", "S. Gupta", "J. D. Cohen", "A. Bhattacharjee"],
+    "venue": "ASPLOS 2024",
+    "year": 2024,
+    "url": ""
+  },
+  {
+    "id": "buschman-motifs-2024",
+    "title": "Low-Dimensional Spatiotemporal Dynamics Underlie Cortex-Wide Neural Motifs",
+    "authors": ["C. J. MacDowell", "T. J. Buschman"],
+    "venue": "Nature Communications",
+    "year": 2024,
+    "url": ""
+  },
+  {
+    "id": "foresee-embc-2025",
+    "title": "Foresee: A Modular Framework for Neural Processing Pipeline Characterization",
     "authors": ["Acorn Project Team"],
-    "venue": "To appear",
+    "venue": "EMBC 2025",
     "year": 2025,
     "url": ""
   }
