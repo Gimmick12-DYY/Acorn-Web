@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { getPublishedNews } from '../lib/news';
-import { Hero, HomeOverviewImage, HomeCtaImage } from '../components';
+import { Hero, HomeOverviewImage, HomeCtaImage, PersonAvatar } from '../components';
 import peopleData from '../data/people.json';
 import { institutions, overview } from '../content/site';
 
@@ -110,14 +110,8 @@ export default async function Page() {
           <div className="grid sm:grid-cols-2 gap-4">
             {pis.map((p) => (
               <div key={p.id} className="card flex items-center gap-4 p-4">
-                <div className="w-16 h-16 rounded-lg bg-gray-100 shrink-0 overflow-hidden flex items-center justify-center text-gray-300">
-                  {p.photoUrl ? (
-                    <img src={p.photoUrl} alt={p.name} className="w-full h-full object-cover" />
-                  ) : (
-                    <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                    </svg>
-                  )}
+                <div className="w-16 h-16 rounded-lg shrink-0 overflow-hidden">
+                  <PersonAvatar name={p.name} photoUrl={p.photoUrl} size="sm" />
                 </div>
                 <div className="min-w-0">
                   <h3 className="font-semibold text-gray-900 text-sm leading-snug">{p.name}</h3>

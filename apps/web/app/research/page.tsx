@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { PageHeader } from '../../components';
 import { designGoals, disciplines, intellectualMerit, researchThrusts } from '../../content/site';
 
@@ -34,27 +33,14 @@ export default function ResearchPage() {
 
       <section className="bg-[#F5F0EA] border-y border-gray-200/80">
         <div className="max-w-6xl mx-auto px-6 py-16">
-          <div className="grid md:grid-cols-2 gap-10 items-start">
-            <div>
-              <div className="accent-rule" />
-              <p className="section-label mb-2">Research Map</p>
-              <h2 className="font-serif text-2xl text-gray-900 mb-4">Five integrated thrusts</h2>
-              <p className="text-gray-600 leading-relaxed text-sm">
-                Acorn organizes computing research across four technical thrusts—MoMA, hardware,
-                systems software, and wireless integration—validated through rodent brain interfacing
-                and integrated with dedicated ethics and education efforts.
-              </p>
-            </div>
-            <div className="rounded-xl overflow-hidden border border-gray-200/80 bg-white shadow-sm">
-              <Image
-                src="/images/figure-research-map.png"
-                alt="Acorn research thrusts and team organization"
-                width={1170}
-                height={975}
-                className="w-full h-auto"
-              />
-            </div>
-          </div>
+          <div className="accent-rule" />
+          <p className="section-label mb-2">Research Map</p>
+          <h2 className="font-serif text-2xl text-gray-900 mb-4">Five integrated thrusts</h2>
+          <p className="text-gray-600 leading-relaxed max-w-3xl">
+            Acorn organizes computing research across four technical thrusts—MoMA, hardware,
+            systems software, and wireless integration—validated through rodent brain interfacing
+            and integrated with dedicated ethics and education efforts.
+          </p>
         </div>
       </section>
 

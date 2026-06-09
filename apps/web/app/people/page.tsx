@@ -76,6 +76,10 @@ export default function PeoplePage() {
         </Section>
       </div>
 
+      <p className="max-w-6xl mx-auto px-6 pb-12 text-center text-xs text-gray-400">
+        Official headshots can be added in <code>public/people/</code> and referenced from{' '}
+        <code>data/people.json</code>.
+      </p>
     </div>
   );
 }

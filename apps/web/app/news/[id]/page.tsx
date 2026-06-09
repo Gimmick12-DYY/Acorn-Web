@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getNewsById } from '../../../lib/news';
 import people from '../../../data/people.json';
+import { PersonAvatar } from '../../../components/PersonAvatar';
 
 export const dynamic = 'force-dynamic';
 
@@ -76,16 +77,8 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ id:
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               {linkedPeople.map((person) => (
                 <div key={person.id} className="card flex items-center gap-3 p-3">
-                  <div className="w-10 h-10 rounded-full bg-gray-100 flex-shrink-0 overflow-hidden">
-                    {person.photoUrl ? (
-                      <img src={person.photoUrl} alt={person.name} className="w-full h-full object-cover" />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center text-gray-300">
-                        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                        </svg>
-                      </div>
-                    )}
+                  <div className="w-10 h-10 rounded-full flex-shrink-0 overflow-hidden">
+                    <PersonAvatar name={person.name} photoUrl={person.photoUrl} size="sm" />
                   </div>
                   <div>
                     <div className="font-bold text-gray-900 text-sm">{person.name}</div>

@@ -1,1 +1,1 @@
-# Place team member photos here (e.g. lead-pi.jpg) and reference them from data/people.json as /people/<file>.
+# Place team member photos here (e.g. bhattacharjee.jpg) and set photoUrl in data/people.json.

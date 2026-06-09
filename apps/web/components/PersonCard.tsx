@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { PersonAvatar } from './PersonAvatar';
 
 function displayName(name: string, preferredName?: string) {
   if (!preferredName) return name;
@@ -29,15 +30,7 @@ export function PersonCard({ name, preferredName, bio, photoUrl, role, projectRo
       onMouseLeave={() => setShowBio(false)}
     >
       <div className="relative h-64 bg-gradient-to-br from-gray-100 to-gray-200">
-        {photoUrl ? (
-          <img src={photoUrl} alt={shownName} className="w-full h-full object-cover" />
-        ) : (
-          <div className="flex items-center justify-center h-full text-gray-300">
-            <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-            </svg>
-          </div>
-        )}
+        <PersonAvatar name={shownName} photoUrl={photoUrl} size="lg" />
       </div>
 
       <div className="p-4">
