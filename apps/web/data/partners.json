@@ -1,42 +1,50 @@
 {
   "collaborators": [
     {
-      "id": "lead-institution",
-      "name": "Lead Institution",
-      "subtitle": "Lead Site",
-      "institution": "Lead Institution",
+      "id": "yale",
+      "name": "Yale University",
+      "subtitle": "Collaborating Institution",
+      "institution": "Yale University",
       "logoUrl": "",
-      "description": "Placeholder for the lead institution coordinating the Acorn expedition. Replace with the real institution name, logo, and description.",
-      "url": ""
+      "description": "Contributing expertise in computer architecture, chip design, compilers, operating systems, algorithms, analog/digital/RF circuits, and bioethics.",
+      "url": "https://www.yale.edu"
     },
     {
-      "id": "partner-1",
-      "name": "Partner Institution",
-      "subtitle": "Collaborating Site",
-      "institution": "Partner University",
+      "id": "princeton",
+      "name": "Princeton University",
+      "subtitle": "Collaborating Institution",
+      "institution": "Princeton University",
       "logoUrl": "",
-      "description": "Placeholder for a collaborating institution contributing to the research thrusts. Replace with real details.",
-      "url": ""
+      "description": "Contributing neuroscience expertise to the Acorn expedition.",
+      "url": "https://www.princeton.edu"
     },
     {
-      "id": "partner-2",
-      "name": "Partner Institution",
-      "subtitle": "Collaborating Site",
-      "institution": "Partner University",
+      "id": "unc",
+      "name": "UNC Chapel Hill",
+      "subtitle": "Collaborating Institution",
+      "institution": "UNC Chapel Hill",
       "logoUrl": "",
-      "description": "Placeholder for a collaborating institution. Replace with real details.",
-      "url": ""
+      "description": "Contributing expertise in computer architecture, chip design, compilers, and analog/digital/RF circuits.",
+      "url": "https://www.unc.edu"
+    },
+    {
+      "id": "iowa-state",
+      "name": "Iowa State University",
+      "subtitle": "Collaborating Institution",
+      "institution": "Iowa State University",
+      "logoUrl": "",
+      "description": "Contributing expertise in computer architecture, chip design, and compilers.",
+      "url": "https://www.iastate.edu"
+    },
+    {
+      "id": "ucr",
+      "name": "UC Riverside",
+      "subtitle": "Collaborating Institution",
+      "institution": "UC Riverside",
+      "logoUrl": "",
+      "description": "Contributing expertise in numerics and programming languages.",
+      "url": "https://www.ucr.edu"
     }
   ],
-  "users": [
-    {
-      "id": "affiliate-lab",
-      "name": "Affiliated Lab",
-      "subtitle": "Affiliate",
-      "institution": "Affiliated University",
-      "logoUrl": "",
-      "description": "Placeholder for an affiliated lab or external collaborator engaging with the Acorn community. Replace with real details.",
-      "url": ""
-    }
-  ]
+  "users": []
 }

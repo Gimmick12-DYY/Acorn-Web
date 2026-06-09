@@ -7,10 +7,9 @@ import { AcornLogo } from './AcornLogo';
 const navLinks = [
   { href: '/about', label: 'About' },
   { href: '/research', label: 'Research' },
-  { href: '/education', label: 'Education' },
-  { href: '/publications', label: 'Publications' },
   { href: '/people', label: 'People' },
-  { href: '/partners', label: 'Institutions' },
+  { href: '/publications', label: 'Publications' },
+  { href: '/outreach', label: 'Outreach' },
   { href: '/news', label: 'News' },
 ];
 

@@ -25,10 +25,9 @@ export function Footer() {
               {[
                 ['About', '/about'],
                 ['Research', '/research'],
-                ['Education', '/education'],
-                ['Publications', '/publications'],
                 ['People', '/people'],
-                ['Institutions', '/partners'],
+                ['Publications', '/publications'],
+                ['Outreach', '/outreach'],
                 ['News', '/news'],
               ].map(([label, href]) => (
                 <li key={href}>

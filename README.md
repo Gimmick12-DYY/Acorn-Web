@@ -14,15 +14,22 @@ application and shared code.
 
 ## Pages
 
-- `/` — Project overview, principal investigators, and latest news.
-- `/about` — The Acorn vision, research narrative, and project timeline.
-- `/research` — Research thrusts and what Acorn enables.
-- `/education` — Education, outreach, and broadening-participation activities.
-- `/publications` — Project publications.
-- `/people` — Team directory grouped by role (PIs, partners, PhD, graduate, undergraduate).
-- `/partners` — Collaborating institutions and partner labs.
-- `/news` + `/news/[id]` — Rolling project updates.
-- `/admin` — Lightweight dashboard to author updates and attribute them to people.
+- `/` — Project overview and latest news
+- `/about` — Public expedition overview
+- `/research` — Research areas (public summaries only)
+- `/people` — Team directory
+- `/publications` — Publications
+- `/outreach` — Outreach and community engagement
+- `/news` + `/news/[id]` — Project updates
+- `/admin` — News authoring dashboard
+
+## Confidential content
+
+This website is **public-facing only**. Do not commit project proposals, grant drafts, internal
+documents, or other confidential materials to this repository. Paths matching `*proposal*`,
+`*confidential*`, `proposal/`, and `private/` are gitignored by default.
+
+When adding page content, use only information approved for public release.
 
 ## Getting started
 

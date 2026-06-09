@@ -3,8 +3,13 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: '/education',
+        destination: '/outreach',
+        permanent: true,
+      },
+      {
         source: '/collaborators',
-        destination: '/partners',
+        destination: '/people',
         permanent: true,
       },
       {

@@ -24,10 +24,10 @@ const icons = {
 };
 
 const capabilities = [
-  { stat: 'Brain-Scale', label: 'Very large scale integration', icon: icons.scale },
-  { stat: 'Cross-Layer', label: 'From devices to algorithms', icon: icons.crosslayer },
-  { stat: 'Bio-Inspired', label: 'Neural computing principles', icon: icons.bio },
-  { stat: 'Multi-Institution', label: 'Collaborative expedition', icon: icons.collaborative },
+  { stat: 'VLBI', label: 'Very Large-scale Brain Interfacing', icon: icons.scale },
+  { stat: 'Milliwatt', label: 'Power-efficient BCI systems', icon: icons.crosslayer },
+  { stat: 'Motifs', label: 'Neuroscience-inspired orchestration', icon: icons.bio },
+  { stat: 'Real-Time', label: 'Millisecond-scale brain interfacing', icon: icons.collaborative },
 ];
 
 export function CapabilityGrid() {

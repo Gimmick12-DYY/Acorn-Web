@@ -10,9 +10,8 @@ out/
 # Logs
 npm-debug.log*
 yarn-debug.log*
-yarn-error.log*
-
-# Env
+yarn-error.log* 
+# Env  
 .env
 .env.local
 

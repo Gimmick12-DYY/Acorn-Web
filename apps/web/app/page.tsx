@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { getPublishedNews } from '../lib/news';
 import { Hero, HomeOverviewImage, HomeCtaImage } from '../components';
 import peopleData from '../data/people.json';
+import { institutions, overview } from '../content/site';
 
 export const dynamic = 'force-dynamic';
 
@@ -18,21 +19,18 @@ type Person = {
 const pillars = [
   {
     title: 'About',
-    description:
-      'The vision, approach, and timeline for very large scale brain integrated computer systems.',
+    description: 'Overview of VLBI and the Acorn chip and software stack.',
     href: '/about',
   },
   {
     title: 'Research',
-    description:
-      'Cross-layer thrusts spanning neuromorphic hardware, systems architecture, and algorithms.',
+    description: 'Intellectual merit — motif-driven, power-efficient BCI systems.',
     href: '/research',
   },
   {
-    title: 'Education',
-    description:
-      'Training, curriculum, and outreach at the intersection of computing and neuroscience.',
-    href: '/education',
+    title: 'Outreach',
+    description: 'Broader impacts — education, workforce, and technology transfer.',
+    href: '/outreach',
   },
 ];
 
@@ -77,23 +75,23 @@ export default async function Page() {
               <div className="accent-rule" />
               <p className="section-label mb-3">The Expedition</p>
               <h2 className="section-title mb-5">
-                A new computing era at the boundary of mind and machine
+                Very Large-scale Brain Interfacing (VLBI)
               </h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Acorn brings together researchers across institutions and disciplines to build the
-                scientific foundations and engineering practices for very large scale brain integrated
-                computer systems.
+                {overview.paragraphs[3]}
               </p>
-              <p className="text-gray-500 leading-relaxed text-sm mb-6">
-                From neuromorphic hardware to the algorithms and theory that make brain-scale
-                integration possible, the expedition is organized as an open, multi-institution effort.
+              <p className="text-gray-500 leading-relaxed text-sm mb-4">
+                {overview.paragraphs[4]}
+              </p>
+              <p className="text-xs text-gray-400 mb-6">
+                {institutions.join(' · ')}
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/people" className="link-arrow">
                   Meet the team <span>&rarr;</span>
                 </Link>
-                <Link href="/partners" className="link-arrow">
-                  View institutions <span>&rarr;</span>
+                <Link href="/publications" className="link-arrow">
+                  Publications <span>&rarr;</span>
                 </Link>
               </div>
             </div>
@@ -191,8 +189,8 @@ export default async function Page() {
               <Link href="/research" className="inline-block bg-white text-acorn-dark font-semibold py-2.5 px-6 rounded-lg hover:bg-gray-100 transition-colors text-sm">
                 Explore Research
               </Link>
-              <Link href="/partners" className="btn-outline-light text-sm">
-                View Institutions
+              <Link href="/outreach" className="btn-outline-light text-sm">
+                Outreach
               </Link>
             </div>
           </div>

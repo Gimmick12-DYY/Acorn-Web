@@ -25,17 +25,18 @@ export function Hero() {
 
       <section className="bg-white border-b border-gray-200/80">
         <div className="max-w-3xl mx-auto px-6 py-14 md:py-20 text-center">
-          <p className="section-label mb-4">NSF-Style Collaborative Research Expedition</p>
+          <p className="section-label mb-4">NSF Expeditions in Computing</p>
           <h1 className="font-serif text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.12] text-gray-900 mb-6">
-            The Dawn of Very Large Scale Brain Integrated Computer Systems
+            Acorn: The Dawn of Very Large Scale Brain Integrated Computer Systems
           </h1>
           <p className="text-lg text-gray-500 leading-relaxed mb-8">
-            Acorn unites investigators across neuroscience, computer architecture, and artificial
-            intelligence to lay the foundations for brain-integrated computing at unprecedented scale.
+            Brain-Computer Interfaces enable machines to read from and modulate biological neurons.
+            Acorn lays the foundation for Very Large-scale Brain Interfacing (VLBI)&mdash;milliwatt-scale,
+            programmable, real-time systems that interface with large volumes of brain data.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link href="/about" className="btn-primary">About the Expedition</Link>
-            <Link href="/research" className="btn-outline">Research Thrusts</Link>
+            <Link href="/research" className="btn-outline">Research</Link>
           </div>
         </div>
       </section>
