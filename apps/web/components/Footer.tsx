@@ -68,7 +68,17 @@ export function Footer() {
 
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between gap-2 text-xs text-white/40">
           <p>&copy; {new Date().getFullYear()} Acorn Project</p>
-          <p>Collaborative Research Expedition</p>
+          <p>
+            Website by{' '}
+            <a
+              href="https://yuyangdeng.com"
+              target="_blank"
+              rel="noreferrer"
+              className="text-white/60 hover:text-white underline underline-offset-2 transition-colors"
+            >
+              Yuyang Deng
+            </a>
+          </p>
         </div>
       </div>
     </footer>
