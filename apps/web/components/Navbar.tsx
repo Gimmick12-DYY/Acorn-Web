@@ -20,11 +20,8 @@ export function Navbar() {
     <header className="sticky top-0 z-50 bg-acorn-dark text-white shadow-md">
       {/* Top bar */}
       <div className="border-b border-white/10">
-        <div className="max-w-6xl mx-auto px-6 py-2 flex items-center justify-between text-xs text-white/60">
+        <div className="max-w-6xl mx-auto px-6 py-2 text-xs text-white/60">
           <span>NSF Expeditions in Computing &middot; Collaborative Research</span>
-          <Link href="/admin" className="hover:text-white/90 transition-colors italic">
-            Admin
-          </Link>
         </div>
       </div>
 
