@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { CapabilityGrid, OverviewPanels, PageHeader } from '../../components';
+import { overviewPanels } from '../../content/images';
 import { broaderImpacts, institutions, overview, vision } from '../../content/site';
 
 export const metadata = {
@@ -18,42 +19,42 @@ export default function AboutPage() {
         description="A collaborative expedition across Yale, Princeton, UNC Chapel Hill, Iowa State, and UC Riverside."
       />
 
-      <section className="max-w-6xl mx-auto px-6 py-16">
-        <div className="mb-10">
+      <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 md:py-16">
+        <div className="mb-8 md:mb-10">
           <div className="accent-rule" />
           <p className="section-label mb-2">Overview</p>
-          <h2 className="font-serif text-2xl text-gray-900">Project overview</h2>
+          <h2 className="font-serif text-2xl text-gray-900 md:text-3xl">Project overview</h2>
         </div>
-        <div className="space-y-6 text-gray-600 leading-relaxed max-w-3xl">
+        <div className="max-w-3xl space-y-5 text-gray-600 leading-relaxed sm:space-y-6">
           {overview.paragraphs.map((paragraph) => (
             <p key={paragraph.slice(0, 40)}>{paragraph}</p>
           ))}
         </div>
       </section>
 
-      <section className="bg-white border-y border-gray-200/80">
-        <div className="max-w-6xl mx-auto px-6 py-16">
-          <div className="mb-10">
+      <section className="border-y border-gray-200/80 bg-[#F5F0EA]">
+        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 md:py-16">
+          <div className="mb-8 md:mb-10">
             <div className="accent-rule" />
             <p className="section-label mb-2">System Overview</p>
-            <h2 className="font-serif text-2xl text-gray-900">The Acorn stack</h2>
-            <p className="text-gray-500 mt-3 max-w-2xl leading-relaxed text-sm">
+            <h2 className="font-serif text-2xl text-gray-900 md:text-3xl">The Acorn stack</h2>
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-gray-600 sm:text-base">
               From high-level programming and compilation to implantable hardware, wireless
               power, and rodent brain validation.
             </p>
           </div>
-          <OverviewPanels />
+          <OverviewPanels panels={overviewPanels} />
         </div>
       </section>
 
-      <section className="bg-[#F5F0EA] border-y border-gray-200/80">
-        <div className="max-w-6xl mx-auto px-6 py-16">
-          <div className="mb-10">
+      <section className="border-y border-gray-200/80 bg-white">
+        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 md:py-16">
+          <div className="mb-8 md:mb-10">
             <div className="accent-rule" />
             <p className="section-label mb-2">Overarching Vision</p>
-            <h2 className="font-serif text-2xl text-gray-900">Closing the BCI computing gap</h2>
+            <h2 className="font-serif text-2xl text-gray-900 md:text-3xl">Closing the BCI computing gap</h2>
           </div>
-          <div className="space-y-6 text-gray-600 leading-relaxed max-w-3xl">
+          <div className="max-w-3xl space-y-5 text-gray-600 leading-relaxed sm:space-y-6">
             {vision.paragraphs.map((paragraph) => (
               <p key={paragraph.slice(0, 40)}>{paragraph}</p>
             ))}
@@ -61,8 +62,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-acorn-light/30 border-y border-acorn/10">
-        <div className="max-w-6xl mx-auto px-6 py-16">
+      <section className="border-y border-acorn/10 bg-acorn-light/30">
+        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 md:py-16">
           <div className="text-center mb-10">
             <p className="section-label mb-3">Participating Institutions</p>
             <div className="flex flex-wrap justify-center gap-3 mt-4">
@@ -90,8 +91,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="max-w-6xl mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-3 gap-12">
+      <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 md:py-16">
+        <div className="grid gap-8 md:grid-cols-3 md:gap-12">
           <div className="md:col-span-1">
             <div className="accent-rule" />
             <p className="section-label mb-2">Broader Impacts</p>
@@ -105,7 +106,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="max-w-6xl mx-auto px-6 py-16 text-center border-t border-gray-100">
+      <section className="mx-auto max-w-6xl border-t border-gray-100 px-4 py-12 text-center sm:px-6 md:py-16">
         <div className="flex justify-center gap-4 flex-wrap">
           <Link href="/research" className="btn-primary">
             Research
