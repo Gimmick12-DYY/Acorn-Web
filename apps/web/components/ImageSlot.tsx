@@ -10,6 +10,10 @@ type ImageSlotProps = {
   /** Use contain for diagrams; cover for photos. */
   fit?: 'cover' | 'contain';
   className?: string;
+  width?: number;
+  height?: number;
+  loading?: 'eager' | 'lazy';
+  fetchPriority?: 'high' | 'low' | 'auto';
 };
 
 const aspectClass = {
@@ -25,6 +29,10 @@ export function ImageSlot({
   variant = 'default',
   fit = 'cover',
   className = '',
+  width,
+  height,
+  loading,
+  fetchPriority,
 }: ImageSlotProps) {
   const sizeClass =
     variant === 'banner'
@@ -42,6 +50,10 @@ export function ImageSlot({
         <img
           src={src}
           alt={alt}
+          width={width}
+          height={height}
+          loading={loading}
+          fetchPriority={fetchPriority}
           className={`absolute inset-0 w-full h-full ${fit === 'contain' ? 'object-contain' : 'object-cover'}`}
         />
       ) : (
