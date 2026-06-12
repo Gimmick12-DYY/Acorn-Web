@@ -9,9 +9,10 @@ export function Hero() {
     <>
       <ImageSlot
         src={heroImage}
-        alt="Acorn expedition — software stack and implantable hardware system overview"
+        alt="Stylized neural network brain representing Acorn brain-computer interfacing research"
         variant="banner"
-        fit="contain"
+        fit="cover"
+        className="bg-black"
       />
 
       <section className="bg-white border-b border-gray-200/80">

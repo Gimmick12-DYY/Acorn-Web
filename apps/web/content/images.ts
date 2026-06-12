@@ -1,6 +1,6 @@
 /** Public site images — paths under apps/web/public/images/ */
 
-export const heroImage = '/images/overview-panel-1.png';
+export const heroImage = '/images/hero-brain.png';
 
 export const overviewPanels = [
   {
