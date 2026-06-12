@@ -1,20 +1,17 @@
 import React from 'react';
 import Link from 'next/link';
+import { heroImage } from '../content/images';
 import { ImageSlot } from './ImageSlot';
 import { NsfAcknowledgment } from './NsfAcknowledgment';
-
-/*
- * Homepage banner — set HERO_IMAGE_URL when ready (e.g. '/images/hero.jpg').
- */
-export const HERO_IMAGE_URL: string | undefined = undefined;
 
 export function Hero() {
   return (
     <>
       <ImageSlot
-        src={HERO_IMAGE_URL}
-        alt="Acorn expedition"
+        src={heroImage}
+        alt="Acorn expedition — software stack and implantable hardware system overview"
         variant="banner"
+        fit="contain"
       />
 
       <section className="bg-white border-b border-gray-200/80">

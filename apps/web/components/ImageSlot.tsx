@@ -7,6 +7,8 @@ type ImageSlotProps = {
   aspect?: 'video' | 'square' | 'wide';
   /** Full-width banner — fixed height, no rounded corners. */
   variant?: 'default' | 'banner';
+  /** Use contain for diagrams; cover for photos. */
+  fit?: 'cover' | 'contain';
   className?: string;
 };
 
@@ -21,6 +23,7 @@ export function ImageSlot({
   alt,
   aspect = 'video',
   variant = 'default',
+  fit = 'cover',
   className = '',
 }: ImageSlotProps) {
   const sizeClass =
@@ -28,13 +31,19 @@ export function ImageSlot({
       ? 'h-52 sm:h-64 md:h-80 lg:h-[420px] rounded-none ring-0'
       : `${aspectClass[aspect]} rounded-2xl ring-1 ring-gray-200/80`;
 
+  const bgClass = fit === 'contain' ? 'bg-white' : 'bg-gray-50/60';
+
   return (
     <div
-      className={`relative w-full overflow-hidden bg-gray-50/60 ${sizeClass} ${className}`}
+      className={`relative w-full overflow-hidden ${bgClass} ${sizeClass} ${className}`}
       aria-label={src ? undefined : alt}
     >
       {src ? (
-        <img src={src} alt={alt} className="absolute inset-0 w-full h-full object-cover" />
+        <img
+          src={src}
+          alt={alt}
+          className={`absolute inset-0 w-full h-full ${fit === 'contain' ? 'object-contain' : 'object-cover'}`}
+        />
       ) : (
         <div
           className="absolute inset-0 border-2 border-dashed border-gray-200/90 bg-transparent"

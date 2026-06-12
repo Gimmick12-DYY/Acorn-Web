@@ -20,11 +20,18 @@ const sizeClass = {
   lg: 'text-2xl',
 };
 
+function encodePublicPath(path: string): string {
+  return path
+    .split('/')
+    .map((segment, index) => (index === 0 ? segment : encodeURIComponent(segment)))
+    .join('/');
+}
+
 export function PersonAvatar({ name, photoUrl, className = '', size = 'md' }: PersonAvatarProps) {
   if (photoUrl) {
     return (
       <img
-        src={photoUrl}
+        src={encodePublicPath(photoUrl)}
         alt={name}
         className={`w-full h-full object-cover ${className}`}
       />

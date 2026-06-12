@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { CapabilityGrid, PageHeader } from '../../components';
+import { CapabilityGrid, OverviewPanels, PageHeader } from '../../components';
 import { broaderImpacts, institutions, overview, vision } from '../../content/site';
 
 export const metadata = {
@@ -28,6 +28,21 @@ export default function AboutPage() {
           {overview.paragraphs.map((paragraph) => (
             <p key={paragraph.slice(0, 40)}>{paragraph}</p>
           ))}
+        </div>
+      </section>
+
+      <section className="bg-white border-y border-gray-200/80">
+        <div className="max-w-6xl mx-auto px-6 py-16">
+          <div className="mb-10">
+            <div className="accent-rule" />
+            <p className="section-label mb-2">System Overview</p>
+            <h2 className="font-serif text-2xl text-gray-900">The Acorn stack</h2>
+            <p className="text-gray-500 mt-3 max-w-2xl leading-relaxed text-sm">
+              From high-level programming and compilation to implantable hardware, wireless
+              power, and rodent brain validation.
+            </p>
+          </div>
+          <OverviewPanels />
         </div>
       </section>
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { PageHeader } from '../../components';
+import { overviewPanels } from '../../content/images';
 import { designGoals, disciplines, intellectualMerit, researchThrusts } from '../../content/site';
 
 export const metadata = {
@@ -33,14 +34,28 @@ export default function ResearchPage() {
 
       <section className="bg-[#F5F0EA] border-y border-gray-200/80">
         <div className="max-w-6xl mx-auto px-6 py-16">
-          <div className="accent-rule" />
-          <p className="section-label mb-2">Research Map</p>
-          <h2 className="font-serif text-2xl text-gray-900 mb-4">Five integrated thrusts</h2>
-          <p className="text-gray-600 leading-relaxed max-w-3xl">
-            Acorn organizes computing research across four technical thrusts—MoMA, hardware,
-            systems software, and wireless integration—validated through rodent brain interfacing
-            and integrated with dedicated ethics and education efforts.
-          </p>
+          <div className="grid lg:grid-cols-2 gap-10 items-start">
+            <div>
+              <div className="accent-rule" />
+              <p className="section-label mb-2">Research Map</p>
+              <h2 className="font-serif text-2xl text-gray-900 mb-4">Five integrated thrusts</h2>
+              <p className="text-gray-600 leading-relaxed">
+                Acorn organizes computing research across four technical thrusts—MoMA, hardware,
+                systems software, and wireless integration—validated through rodent brain interfacing
+                and integrated with dedicated ethics and education efforts.
+              </p>
+            </div>
+            <figure className="rounded-xl overflow-hidden border border-gray-200/80 bg-white">
+              <img
+                src={overviewPanels[2].src}
+                alt={overviewPanels[2].alt}
+                className="w-full h-auto"
+              />
+              <figcaption className="px-4 py-3 text-xs text-gray-500 leading-relaxed border-t border-gray-100">
+                {overviewPanels[2].caption}
+              </figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 

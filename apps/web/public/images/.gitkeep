@@ -1,1 +1,6 @@
-# Homepage banner — set HERO_IMAGE_URL in components/Hero.tsx (e.g. '/images/hero.jpg').
+# Site images
+#   overview-panel-1.png  — hero banner, About (MoLib → hardware)
+#   overview-panel-2.png  — About (wireless power & wearables)
+#   overview-panel-3.png  — About, Research (rodent validation / system board)
+#
+# PI headshots: public/people/ — set photoUrl in data/people.json
