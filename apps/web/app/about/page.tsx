@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { CapabilityGrid, PageHeader } from '../../components';
-import { aboutBrainImage, overviewPanels } from '../../content/images';
+import { aboutBrainImage, rodentValidationImage } from '../../content/images';
 import { broaderImpacts, institutions, overview, projectKeywords, vision } from '../../content/site';
 
 export const metadata = {
@@ -46,7 +46,7 @@ export default function AboutPage() {
 
       <section className="border-y border-gray-200/80 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 md:py-16">
-          <div className="grid items-start gap-10 md:grid-cols-2 md:gap-12 lg:gap-16">
+          <div className="grid items-center gap-10 md:grid-cols-2 md:gap-12 lg:gap-16">
             <div className="min-w-0">
               <div className="accent-rule" />
               <p className="section-label mb-2">Overarching Vision</p>
@@ -60,10 +60,10 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="min-w-0">
+            <div className="min-w-0 md:pt-6 lg:pt-10">
               <img
-                src={overviewPanels[2].src}
-                alt={overviewPanels[2].alt}
+                src={rodentValidationImage}
+                alt="Acorn rodent brain interfacing — wireless power, implantable system and probes, and wearables"
                 className="block w-full h-auto"
                 loading="lazy"
               />
@@ -89,12 +89,12 @@ export default function AboutPage() {
           </div>
           <CapabilityGrid />
           <div className="text-center mt-10">
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8">
-              <Link href="/research" className="link-arrow">
-                Intellectual merit <span>&rarr;</span>
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+              <Link href="/research" className="btn-primary">
+                Research
               </Link>
-              <Link href="/outreach" className="link-arrow">
-                Broader impacts <span>&rarr;</span>
+              <Link href="/outreach" className="btn-outline">
+                Outreach
               </Link>
             </div>
           </div>
