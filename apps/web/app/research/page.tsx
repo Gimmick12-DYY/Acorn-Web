@@ -121,8 +121,8 @@ export default function ResearchPage() {
           <Link href="/about" className="btn-primary">
             About Acorn
           </Link>
-          <Link href="/publications" className="btn-outline">
-            Publications
+          <Link href="/resources" className="btn-outline">
+            Resources
           </Link>
         </div>
       </section>

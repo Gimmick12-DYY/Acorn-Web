@@ -14,7 +14,12 @@ const nextConfig = {
       },
       {
         source: '/research-papers',
-        destination: '/publications',
+        destination: '/resources',
+        permanent: true,
+      },
+      {
+        source: '/publications',
+        destination: '/resources',
         permanent: true,
       },
       {

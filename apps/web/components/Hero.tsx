@@ -20,12 +20,14 @@ export function Hero() {
       />
 
       <section className="bg-white border-b border-gray-200/80">
-        <div className="max-w-3xl mx-auto px-6 py-12 md:py-16 text-center">
+        <div className="max-w-4xl mx-auto px-6 py-12 md:py-16 text-center">
           <div className="mb-5 flex justify-center">
             <NsfAcknowledgment variant="badge" />
           </div>
           <h1 className="font-serif text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.12] text-gray-900 mb-5">
-            Acorn: The Dawn of Very Large Scale Brain Integrated Computer Systems
+            Acorn: The Dawn of Very Large Scale
+            <br />
+            Brain Integrated Computer Systems
           </h1>
           <p className="text-lg text-gray-500 leading-relaxed mb-4">
             A long-term collaborative expedition laying the foundation for Very Large-scale

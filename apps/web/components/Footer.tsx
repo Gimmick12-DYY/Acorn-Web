@@ -15,8 +15,7 @@ export function Footer() {
               <span className="font-bold text-lg">Acorn</span>
             </div>
             <p className="text-white/60 text-sm leading-relaxed max-w-sm">
-              The Dawn of Very Large Scale Brain Integrated Computer Systems — a collaborative
-              research expedition uniting neuroscience, computer architecture, and AI.
+              A collaborative NSF expedition in very large scale brain integrated computing.
             </p>
             <NsfAcknowledgment variant="footer" />
           </div>
@@ -28,8 +27,9 @@ export function Footer() {
                 ['About', '/about'],
                 ['Research', '/research'],
                 ['People', '/people'],
-                ['Publications', '/publications'],
+                ['Resources', '/resources'],
                 ['Outreach', '/outreach'],
+                ['Events', '/events'],
                 ['News', '/news'],
               ].map(([label, href]) => (
                 <li key={href}>

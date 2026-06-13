@@ -6,40 +6,6 @@ import { institutions } from '../content/site';
 
 export const dynamic = 'force-dynamic';
 
-const hubLinks = [
-  {
-    title: 'About',
-    description: 'Expedition overview, participating institutions, and broader impacts.',
-    href: '/about',
-  },
-  {
-    title: 'Research',
-    description: 'Intellectual merit, five research thrusts, and design goals for Acorn.',
-    href: '/research',
-  },
-  {
-    title: 'People',
-    description: 'Principal investigators and collaborators across five institutions.',
-    href: '/people',
-  },
-  {
-    title: 'Publications',
-    description: 'Peer-reviewed papers and technical outputs from the expedition.',
-    href: '/publications',
-  },
-  {
-    title: 'Outreach',
-    description: 'Education, workforce development, and community engagement.',
-    href: '/outreach',
-  },
-  {
-    title: 'News',
-    description: 'Project announcements, milestones, and expedition updates.',
-    href: '/news',
-    highlight: true,
-  },
-];
-
 export default async function Page() {
   const allNews = await getPublishedNews();
   const items = allNews.slice(0, 4);
@@ -102,50 +68,6 @@ export default async function Page() {
               News posts will appear here. Add entries in <code className="text-white/70">data/news.json</code>.
             </div>
           )}
-        </div>
-      </section>
-
-      {/* Hub — links to every section */}
-      <section className="bg-acorn-light/40 border-b border-acorn/10">
-        <div className="max-w-6xl mx-auto px-6 py-14 md:py-16">
-          <div className="mb-10">
-            <div className="accent-rule" />
-            <p className="section-label mb-2">Explore</p>
-            <h2 className="section-title">Navigate the expedition</h2>
-            <p className="text-gray-500 mt-3 max-w-2xl leading-relaxed">
-              Jump to any area of the Acorn project&mdash;from research thrusts and team
-              members to publications and outreach programs.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {hubLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`card p-6 group block h-full ${
-                  link.highlight ? 'ring-2 ring-acorn/20 border-acorn/30' : ''
-                }`}
-              >
-                <div className="flex items-start justify-between gap-3 mb-3">
-                  <div className="accent-rule group-hover:w-16 transition-all mb-0" />
-                  {link.highlight && (
-                    <span className="shrink-0 text-[10px] font-bold uppercase tracking-wider text-acorn bg-acorn/10 px-2 py-1 rounded">
-                      Updates
-                    </span>
-                  )}
-                </div>
-                <h3 className="font-serif text-xl text-gray-900 mb-2 group-hover:text-acorn transition-colors">
-                  {link.title}
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-4">{link.description}</p>
-                <span className="link-arrow">
-                  Go to {link.title.toLowerCase()}
-                  <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
-                </span>
-              </Link>
-            ))}
-          </div>
         </div>
       </section>
 

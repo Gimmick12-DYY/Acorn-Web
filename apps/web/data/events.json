@@ -1,0 +1,20 @@
+[
+  {
+    "id": "kickoff-workshop-2025",
+    "title": "Acorn Expedition Kickoff Workshop",
+    "date": "2025-09-15",
+    "type": "Workshop",
+    "location": "Yale University",
+    "description": "Launch meeting for Acorn collaborators across all participating institutions to align on research thrusts and milestones.",
+    "url": ""
+  },
+  {
+    "id": "vlbi-seminar-series",
+    "title": "VLBI Systems Seminar Series",
+    "date": "2026-01-20",
+    "type": "Seminar",
+    "location": "Virtual",
+    "description": "Monthly seminar on very large-scale brain interfacing — architecture, algorithms, and neuroscience perspectives from the Acorn team.",
+    "url": ""
+  }
+]

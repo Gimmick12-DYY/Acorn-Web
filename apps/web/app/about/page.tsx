@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { CapabilityGrid, OverviewPanels, PageHeader } from '../../components';
-import { overviewPanels } from '../../content/images';
+import { aboutBrainImage, overviewPanels } from '../../content/images';
 import { broaderImpacts, institutions, overview, vision } from '../../content/site';
 
 export const metadata = {
@@ -15,8 +15,20 @@ export default function AboutPage() {
     <div>
       <PageHeader
         label="Expeditions in Computing · Acorn"
-        title="The Dawn of Very Large Scale Brain Integrated Computer Systems"
+        title={
+          <>
+            The Dawn of Very Large Scale
+            <br />
+            Brain Integrated Computer Systems
+          </>
+        }
         description="A collaborative expedition across Yale, Princeton, UNC Chapel Hill, Iowa State, and UC Riverside."
+        image={{
+          src: aboutBrainImage,
+          alt: 'Stylized neural network brain representing Acorn brain integrated computing research',
+          width: 800,
+          height: 533,
+        }}
       />
 
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 md:py-16">

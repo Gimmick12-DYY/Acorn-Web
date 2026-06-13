@@ -2,30 +2,28 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { AcornLogo } from './AcornLogo';
 
 const navLinks = [
-  { href: '/news', label: 'News' },
   { href: '/about', label: 'About' },
   { href: '/research', label: 'Research' },
   { href: '/people', label: 'People' },
-  { href: '/publications', label: 'Publications' },
+  { href: '/resources', label: 'Resources' },
   { href: '/outreach', label: 'Outreach' },
+  { href: '/events', label: 'Events' },
+  { href: '/news', label: 'News' },
 ];
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (href: string) =>
+    href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(`${href}/`);
 
   return (
     <header className="sticky top-0 z-50 bg-acorn-dark text-white shadow-md">
-      {/* Top bar */}
-      <div className="border-b border-white/10">
-        <div className="max-w-6xl mx-auto px-6 py-2 text-xs text-white/60">
-          <span>NSF Expeditions in Computing &middot; Collaborative Research</span>
-        </div>
-      </div>
-
-      {/* Main nav */}
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between gap-6">
           <Link href="/" className="flex items-center gap-3 shrink-0 group">
@@ -35,18 +33,18 @@ export function Navbar() {
             <div>
               <span className="font-bold text-lg leading-tight block">Acorn</span>
               <span className="text-[10px] uppercase tracking-widest text-white/50 hidden sm:block">
-                Brain Integrated Systems
+                Brain Integrated Computing
               </span>
             </div>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-0.5">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
-                  link.href === '/news'
+                className={`px-2.5 py-2 text-sm font-medium rounded-md transition-colors ${
+                  isActive(link.href)
                     ? 'text-white bg-white/15 hover:bg-white/20'
                     : 'text-white/75 hover:text-white hover:bg-white/10'
                 }`}
