@@ -1,32 +1,47 @@
 import React from 'react';
 import type { OverviewPanel } from '../content/images';
 
+function StageArrow() {
+  return (
+    <div
+      className="hidden shrink-0 items-center justify-center self-center px-1 text-acorn/35 md:flex lg:px-2"
+      aria-hidden
+    >
+      <svg className="h-5 w-5 lg:h-6 lg:w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+      </svg>
+    </div>
+  );
+}
+
 function PanelCard({ panel, index }: { panel: OverviewPanel; index: number }) {
   return (
     <figure className="flex h-full min-w-0 flex-col">
-      <div className="mb-3 flex items-start gap-3">
+      <div className="mb-2 flex items-start gap-2.5">
         <span
-          className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-acorn text-xs font-bold text-white"
+          className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-acorn text-[10px] font-bold text-white"
           aria-hidden
         >
           {index + 1}
         </span>
         <div className="min-w-0 pt-0.5">
-          <h3 className="font-serif text-lg leading-snug text-gray-900">{panel.title}</h3>
+          <h3 className="font-serif text-base leading-snug text-gray-900 lg:text-[1.05rem]">
+            {panel.title}
+          </h3>
         </div>
       </div>
 
       <div className="flex flex-1 flex-col rounded-xl border border-gray-200/80 bg-white shadow-sm">
-        <div className="overflow-x-auto overscroll-x-contain rounded-t-xl bg-white p-3 sm:p-4">
+        <div className="flex items-center justify-center overflow-hidden rounded-t-xl bg-white p-2 sm:p-3">
           <img
             src={panel.src}
             alt={panel.alt}
-            className="mx-auto block h-auto w-full min-w-[520px] max-w-3xl sm:min-w-[600px] md:min-w-0 md:max-w-full"
+            className="block h-auto max-h-36 w-full object-contain sm:max-h-40 md:max-h-44 lg:max-h-48"
             loading="lazy"
             decoding="async"
           />
         </div>
-        <figcaption className="border-t border-gray-100 px-4 py-3 text-sm leading-relaxed text-gray-500 sm:px-5 sm:py-4">
+        <figcaption className="border-t border-gray-100 px-3 py-2.5 text-xs leading-relaxed text-gray-500 sm:px-4 sm:py-3">
           {panel.caption}
         </figcaption>
       </div>
@@ -41,30 +56,32 @@ type OverviewPanelsProps = {
 export function OverviewPanels({ panels }: OverviewPanelsProps) {
   return (
     <div className="min-w-0">
-      {/* Mobile & tablet: swipeable carousel */}
-      <div className="lg:hidden">
-        <p className="mb-3 text-xs text-gray-400 sm:hidden">
-          Swipe to view each diagram · scroll sideways on wide figures
+      {/* Mobile: swipe through stages */}
+      <div className="md:hidden">
+        <p className="mb-3 text-xs text-gray-400">
+          Swipe to follow each stage · {panels.length} steps
         </p>
-        <div className="-mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain px-6 pb-2 [scrollbar-width:thin]">
+        <div className="-mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain px-4 pb-2 [scrollbar-width:thin] sm:-mx-6 sm:px-6">
           {panels.map((panel, index) => (
             <div
               key={panel.src}
-              className="w-[calc(100vw-3rem)] max-w-md shrink-0 snap-center sm:w-[min(85vw,28rem)]"
+              className="w-[min(78vw,17rem)] shrink-0 snap-center sm:w-72"
             >
               <PanelCard panel={panel} index={index} />
             </div>
           ))}
         </div>
-        <p className="mt-4 text-center text-xs text-gray-400">
-          {panels.length} diagrams · {panels.map((_, i) => i + 1).join(' · ')}
-        </p>
       </div>
 
-      {/* Desktop: vertical stack, centered readable width */}
-      <div className="hidden lg:grid lg:grid-cols-1 lg:gap-10">
+      {/* Tablet & desktop: horizontal sequence */}
+      <div className="hidden md:flex md:items-stretch">
         {panels.map((panel, index) => (
-          <PanelCard key={panel.src} panel={panel} index={index} />
+          <React.Fragment key={panel.src}>
+            <div className="min-w-0 flex-1">
+              <PanelCard panel={panel} index={index} />
+            </div>
+            {index < panels.length - 1 && <StageArrow />}
+          </React.Fragment>
         ))}
       </div>
     </div>

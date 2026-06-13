@@ -6,6 +6,8 @@ export const aboutBrainImage = '/images/about-brain.jpg';
 
 export const rodentValidationImage = '/images/rodent-validation.png';
 
+export const layersDiagram = '/images/Layers.svg';
+
 export const overviewPanels = [
   {
     src: '/images/overview-panel-1.png',

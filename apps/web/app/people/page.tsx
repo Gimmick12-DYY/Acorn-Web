@@ -1,6 +1,7 @@
 import React from 'react';
 import peopleData from '../../data/people.json';
 import { PersonCard, PageHeader } from '../../components';
+import { disciplines } from '../../content/site';
 
 type Person = {
   id: string;
@@ -75,6 +76,23 @@ export default function PeoplePage() {
           {undergraduates.map(p => <PersonCard key={p.id} {...p} />)}
         </Section>
       </div>
+
+      <section className="border-t border-gray-200/80 bg-acorn-light/30">
+        <div className="max-w-6xl mx-auto px-6 py-16">
+          <div className="mb-8">
+            <div className="accent-rule" />
+            <p className="section-label mb-2">Disciplines</p>
+            <h2 className="font-serif text-2xl text-gray-900">Cross-disciplinary expertise</h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {disciplines.map((d) => (
+              <div key={d} className="card px-5 py-4 text-sm font-medium text-gray-700">
+                {d}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

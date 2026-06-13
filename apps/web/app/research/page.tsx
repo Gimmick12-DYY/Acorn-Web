@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { OverviewPanels, PageHeader } from '../../components';
-import { overviewPanels } from '../../content/images';
-import { designGoals, disciplines, intellectualMerit, researchThrusts } from '../../content/site';
+import { overviewPanels, layersDiagram } from '../../content/images';
+import { designGoals, intellectualMerit, researchThrusts } from '../../content/site';
 
 export const metadata = {
   title: 'Research | Acorn',
@@ -20,15 +20,28 @@ export default function ResearchPage() {
       />
 
       <section className="max-w-6xl mx-auto px-6 py-16">
-        <div className="mb-10">
-          <div className="accent-rule" />
-          <p className="section-label mb-2">Intellectual Merit</p>
-          <h2 className="font-serif text-2xl text-gray-900">Scientific and technical foundations</h2>
-        </div>
-        <div className="space-y-6 text-gray-600 leading-relaxed max-w-3xl">
-          {intellectualMerit.paragraphs.map((paragraph) => (
-            <p key={paragraph.slice(0, 40)}>{paragraph}</p>
-          ))}
+        <div className="grid items-start gap-10 md:grid-cols-2 md:gap-12 lg:gap-16">
+          <div className="min-w-0">
+            <div className="accent-rule" />
+            <p className="section-label mb-2">Intellectual Merit</p>
+            <h2 className="font-serif text-2xl text-gray-900 mb-6">
+              Scientific and technical foundations
+            </h2>
+            <div className="space-y-6 text-gray-600 leading-relaxed">
+              {intellectualMerit.paragraphs.map((paragraph) => (
+                <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+              ))}
+            </div>
+          </div>
+
+          <div className="min-w-0">
+            <img
+              src={layersDiagram}
+              alt="Acorn expedition organization — research layers and institutional structure"
+              className="w-full h-auto"
+              loading="lazy"
+            />
+          </div>
         </div>
       </section>
 
@@ -44,45 +57,6 @@ export default function ResearchPage() {
             </p>
           </div>
           <OverviewPanels panels={overviewPanels} />
-        </div>
-      </section>
-
-      <section className="bg-white border-y border-gray-200/80">
-        <div className="max-w-6xl mx-auto px-6 py-16">
-          <div className="max-w-3xl">
-            <div className="accent-rule" />
-            <p className="section-label mb-2">Research Map</p>
-            <h2 className="font-serif text-2xl text-gray-900 mb-4">Five integrated thrusts</h2>
-            <p className="text-gray-600 leading-relaxed">
-              Acorn organizes computing research across four technical thrusts—MoMA, hardware,
-              systems software, and wireless integration—validated through rodent brain interfacing
-              and integrated with dedicated ethics and education efforts.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="max-w-6xl mx-auto px-6 py-16">
-        <div className="mb-10">
-          <div className="accent-rule" />
-          <p className="section-label mb-2">Research Thrusts</p>
-          <h2 className="font-serif text-2xl text-gray-900">Technical research areas</h2>
-        </div>
-        <div className="space-y-6">
-          {researchThrusts.map((thrust) => (
-            <div key={thrust.id} className="card p-6 md:p-8">
-              <div className="flex items-start gap-4">
-                <span className="shrink-0 w-10 h-10 rounded-xl bg-acorn/10 text-acorn font-bold flex items-center justify-center text-sm">
-                  T{thrust.number}
-                </span>
-                <div>
-                  <h3 className="font-serif text-xl text-gray-900 mb-1">{thrust.title}</h3>
-                  <p className="text-xs text-acorn font-medium mb-3">{thrust.leaders}</p>
-                  <p className="text-gray-600 leading-relaxed text-sm">{thrust.summary}</p>
-                </div>
-              </div>
-            </div>
-          ))}
         </div>
       </section>
 
@@ -105,15 +79,29 @@ export default function ResearchPage() {
       </section>
 
       <section className="max-w-6xl mx-auto px-6 py-16">
-        <div className="mb-8">
+        <div className="mb-10 max-w-3xl">
           <div className="accent-rule" />
-          <p className="section-label mb-2">Disciplines</p>
-          <h2 className="font-serif text-2xl text-gray-900">Cross-disciplinary expertise</h2>
+          <p className="section-label mb-2">Research Thrusts</p>
+          <h2 className="font-serif text-2xl text-gray-900 mb-4">Five integrated thrusts</h2>
+          <p className="text-gray-600 leading-relaxed">
+            Acorn organizes computing research across four technical thrusts—MoMA, hardware,
+            systems software, and wireless integration—validated through rodent brain interfacing
+            and integrated with dedicated ethics and education efforts.
+          </p>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {disciplines.map((d) => (
-            <div key={d} className="card px-5 py-4 text-sm font-medium text-gray-700">
-              {d}
+        <div className="space-y-6">
+          {researchThrusts.map((thrust) => (
+            <div key={thrust.id} className="card p-6 md:p-8">
+              <div className="flex items-start gap-4">
+                <span className="shrink-0 w-10 h-10 rounded-xl bg-acorn/10 text-acorn font-bold flex items-center justify-center text-sm">
+                  T{thrust.number}
+                </span>
+                <div>
+                  <h3 className="font-serif text-xl text-gray-900 mb-1">{thrust.title}</h3>
+                  <p className="text-xs text-acorn font-medium mb-3">{thrust.leaders}</p>
+                  <p className="text-gray-600 leading-relaxed text-sm">{thrust.summary}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>

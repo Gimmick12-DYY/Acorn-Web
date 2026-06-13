@@ -60,13 +60,13 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-white">
+            <div className="min-w-0">
               <img
                 src={rodentValidationImage}
-                alt="Acorn rodent brain interfacing — wireless power delivery to implantable system and probes"
-                width={360}
-                height={340}
-                className="absolute inset-0 h-full w-full object-contain"
+                alt="Acorn rodent brain interfacing — wireless power, implantable system and probes, and wearables integration"
+                width={739}
+                height={324}
+                className="w-full h-auto"
                 loading="lazy"
               />
             </div>
