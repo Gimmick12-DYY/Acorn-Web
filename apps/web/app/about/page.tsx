@@ -56,13 +56,13 @@ export default function AboutPage() {
               <p key={paragraph.slice(0, 40)}>{paragraph}</p>
             ))}
           </div>
-          <div className="mt-8 md:mt-10 overflow-x-auto">
+          <div className="max-w-3xl">
             <img
               src={rodentValidationImage}
-              alt="Acorn rodent brain interfacing — wireless power, implantable system and probes, and wearables"
-              width={588}
-              height={200}
-              className="mx-auto block h-48 w-auto max-w-none border-0 sm:h-56 md:h-72 lg:h-80"
+              alt="Acorn rodent brain interfacing — implantable system and probes with wearables"
+              width={589}
+              height={175}
+              className="mt-10 block w-full h-auto border-0"
               loading="lazy"
             />
           </div>
