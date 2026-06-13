@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { CapabilityGrid, PageHeader } from '../../components';
-import { aboutBrainImage, rodentValidationImage } from '../../content/images';
+import { aboutBrainImage } from '../../content/images';
 import { broaderImpacts, institutions, overview, projectKeywords, vision } from '../../content/site';
 
 export const metadata = {
@@ -55,16 +55,6 @@ export default function AboutPage() {
             {vision.paragraphs.map((paragraph) => (
               <p key={paragraph.slice(0, 40)}>{paragraph}</p>
             ))}
-          </div>
-          <div className="max-w-3xl">
-            <img
-              src={rodentValidationImage}
-              alt="Acorn rodent brain interfacing — implantable system and probes with wearables"
-              width={589}
-              height={175}
-              className="mt-10 block w-full h-auto border-0"
-              loading="lazy"
-            />
           </div>
         </div>
       </section>

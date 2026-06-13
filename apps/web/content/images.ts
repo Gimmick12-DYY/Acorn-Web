@@ -4,8 +4,6 @@ export const heroImage = '/images/hero-brain.jpg';
 
 export const aboutBrainImage = '/images/about-brain.jpg';
 
-export const rodentValidationImage = '/images/rodent-validation.png';
-
 export const overviewPanels = [
   {
     src: '/images/overview-panel-1.png',
