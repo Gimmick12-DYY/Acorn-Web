@@ -56,18 +56,20 @@ export default function AboutPage() {
               <p key={paragraph.slice(0, 40)}>{paragraph}</p>
             ))}
           </div>
-          <img
-            src={rodentValidationImage}
-            alt="Acorn rodent brain interfacing — wireless power, implantable system and probes, and wearables"
-            width={569}
-            height={198}
-            className="mt-10 block w-full h-auto border-0"
-            loading="lazy"
-          />
+          <div className="mt-8 md:mt-10 overflow-x-auto">
+            <img
+              src={rodentValidationImage}
+              alt="Acorn rodent brain interfacing — wireless power, implantable system and probes, and wearables"
+              width={588}
+              height={200}
+              className="mx-auto block h-48 w-auto max-w-none border-0 sm:h-56 md:h-72 lg:h-80"
+              loading="lazy"
+            />
+          </div>
         </div>
       </section>
 
-      <section className="border-y border-acorn/10 bg-acorn-light/30">
+      <section className="bg-acorn-light/30">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 md:py-16">
           <div className="text-center mb-10">
             <p className="section-label mb-3">Participating Institutions</p>

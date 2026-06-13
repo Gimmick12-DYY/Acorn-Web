@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { OverviewPanels, PageHeader } from '../../components';
-import { overviewPanels, layersDiagram } from '../../content/images';
+import { overviewPanels } from '../../content/images';
 import { designGoals, intellectualMerit, researchThrusts } from '../../content/site';
 
 export const metadata = {
@@ -30,14 +30,6 @@ export default function ResearchPage() {
             <p key={paragraph.slice(0, 40)}>{paragraph}</p>
           ))}
         </div>
-        <img
-          src={layersDiagram}
-          alt="Acorn software and hardware stack — applications through MoLib, MoMA, and processor"
-          width={1636}
-          height={1196}
-          className="mt-10 block w-full h-auto border-0"
-          loading="lazy"
-        />
       </section>
 
       <section className="border-y border-gray-200/80 bg-[#F5F0EA]">
