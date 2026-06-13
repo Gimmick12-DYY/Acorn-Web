@@ -1,7 +1,9 @@
 # Site images
 #   hero-brain.jpg        — homepage hero banner (~optimized JPEG, ~124KB)
-#   overview-panel-1.png  — About (MoLib → hardware)
-#   overview-panel-2.png  — About (wireless power & wearables)
-#   overview-panel-3.png  — About, Research (rodent validation / system board)
+#   about-brain.jpg         — About page header
+#   rodent-validation.png   — About vision section (cropped from panel 3)
+#   overview-panel-1.png    — Research (MoLib → hardware)
+#   overview-panel-2.png    — Research (wireless power & wearables)
+#   overview-panel-3.png    — Research (rodent validation / system board)
 #
 # PI headshots: public/people/ — set photoUrl in data/people.json

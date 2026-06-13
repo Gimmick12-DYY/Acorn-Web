@@ -39,7 +39,7 @@ export function PageHeader({ label, title, description, children, image }: PageH
           </div>
 
           {image && (
-            <div className="relative aspect-[3/2] overflow-hidden rounded-2xl bg-black ring-1 ring-gray-200/80">
+            <div className="relative aspect-[3/2] overflow-hidden rounded-2xl bg-black">
               <img
                 src={image.src}
                 alt={image.alt}

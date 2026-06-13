@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import { CapabilityGrid, OverviewPanels, PageHeader } from '../../components';
-import { aboutBrainImage, overviewPanels } from '../../content/images';
+import { CapabilityGrid, PageHeader } from '../../components';
+import { aboutBrainImage, rodentValidationImage } from '../../content/images';
 import { broaderImpacts, institutions, overview, vision } from '../../content/site';
 
 export const metadata = {
@@ -44,32 +44,32 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="border-y border-gray-200/80 bg-[#F5F0EA]">
-        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 md:py-16">
-          <div className="mb-8 md:mb-10">
-            <div className="accent-rule" />
-            <p className="section-label mb-2">System Overview</p>
-            <h2 className="font-serif text-2xl text-gray-900 md:text-3xl">The Acorn stack</h2>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-gray-600 sm:text-base">
-              From high-level programming and compilation to implantable hardware, wireless
-              power, and rodent brain validation.
-            </p>
-          </div>
-          <OverviewPanels panels={overviewPanels} />
-        </div>
-      </section>
-
       <section className="border-y border-gray-200/80 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 md:py-16">
-          <div className="mb-8 md:mb-10">
-            <div className="accent-rule" />
-            <p className="section-label mb-2">Overarching Vision</p>
-            <h2 className="font-serif text-2xl text-gray-900 md:text-3xl">Closing the BCI computing gap</h2>
-          </div>
-          <div className="max-w-3xl space-y-5 text-gray-600 leading-relaxed sm:space-y-6">
-            {vision.paragraphs.map((paragraph) => (
-              <p key={paragraph.slice(0, 40)}>{paragraph}</p>
-            ))}
+          <div className="grid items-center gap-10 md:grid-cols-2 md:gap-12 lg:gap-16">
+            <div className="min-w-0">
+              <div className="accent-rule" />
+              <p className="section-label mb-2">Overarching Vision</p>
+              <h2 className="font-serif text-2xl text-gray-900 md:text-3xl">
+                Closing the BCI computing gap
+              </h2>
+              <div className="mt-6 space-y-5 text-gray-600 leading-relaxed sm:space-y-6">
+                {vision.paragraphs.map((paragraph) => (
+                  <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-white">
+              <img
+                src={rodentValidationImage}
+                alt="Acorn rodent brain interfacing — wireless power delivery to implantable system and probes"
+                width={360}
+                height={340}
+                className="absolute inset-0 h-full w-full object-contain"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </section>

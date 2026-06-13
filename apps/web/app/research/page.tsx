@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { PageHeader } from '../../components';
+import { OverviewPanels, PageHeader } from '../../components';
 import { overviewPanels } from '../../content/images';
 import { designGoals, disciplines, intellectualMerit, researchThrusts } from '../../content/site';
 
@@ -32,29 +32,32 @@ export default function ResearchPage() {
         </div>
       </section>
 
-      <section className="bg-[#F5F0EA] border-y border-gray-200/80">
+      <section className="border-y border-gray-200/80 bg-[#F5F0EA]">
+        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 md:py-16">
+          <div className="mb-8 md:mb-10">
+            <div className="accent-rule" />
+            <p className="section-label mb-2">System Overview</p>
+            <h2 className="font-serif text-2xl text-gray-900 md:text-3xl">The Acorn stack</h2>
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-gray-600 sm:text-base">
+              From high-level programming and compilation to implantable hardware, wireless
+              power, and rodent brain validation.
+            </p>
+          </div>
+          <OverviewPanels panels={overviewPanels} />
+        </div>
+      </section>
+
+      <section className="bg-white border-y border-gray-200/80">
         <div className="max-w-6xl mx-auto px-6 py-16">
-          <div className="grid lg:grid-cols-2 gap-10 items-start">
-            <div>
-              <div className="accent-rule" />
-              <p className="section-label mb-2">Research Map</p>
-              <h2 className="font-serif text-2xl text-gray-900 mb-4">Five integrated thrusts</h2>
-              <p className="text-gray-600 leading-relaxed">
-                Acorn organizes computing research across four technical thrusts—MoMA, hardware,
-                systems software, and wireless integration—validated through rodent brain interfacing
-                and integrated with dedicated ethics and education efforts.
-              </p>
-            </div>
-            <figure className="rounded-xl overflow-hidden border border-gray-200/80 bg-white">
-              <img
-                src={overviewPanels[2].src}
-                alt={overviewPanels[2].alt}
-                className="w-full h-auto"
-              />
-              <figcaption className="px-4 py-3 text-xs text-gray-500 leading-relaxed border-t border-gray-100">
-                {overviewPanels[2].caption}
-              </figcaption>
-            </figure>
+          <div className="max-w-3xl">
+            <div className="accent-rule" />
+            <p className="section-label mb-2">Research Map</p>
+            <h2 className="font-serif text-2xl text-gray-900 mb-4">Five integrated thrusts</h2>
+            <p className="text-gray-600 leading-relaxed">
+              Acorn organizes computing research across four technical thrusts—MoMA, hardware,
+              systems software, and wireless integration—validated through rodent brain interfacing
+              and integrated with dedicated ethics and education efforts.
+            </p>
           </div>
         </div>
       </section>
