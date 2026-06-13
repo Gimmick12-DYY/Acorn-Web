@@ -44,31 +44,26 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="border-y border-gray-200/80 bg-white">
+      <section className="bg-white">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 md:py-16">
-          <div className="grid items-center gap-10 md:grid-cols-2 md:gap-12 lg:gap-16">
-            <div className="min-w-0">
-              <div className="accent-rule" />
-              <p className="section-label mb-2">Overarching Vision</p>
-              <h2 className="font-serif text-2xl text-gray-900 md:text-3xl">
-                Closing the BCI computing gap
-              </h2>
-              <div className="mt-6 space-y-5 text-gray-600 leading-relaxed sm:space-y-6">
-                {vision.paragraphs.map((paragraph) => (
-                  <p key={paragraph.slice(0, 40)}>{paragraph}</p>
-                ))}
-              </div>
-            </div>
-
-            <div className="min-w-0 md:pt-6 lg:pt-10">
-              <img
-                src={rodentValidationImage}
-                alt="Acorn rodent brain interfacing — wireless power, implantable system and probes, and wearables"
-                className="block w-full h-auto"
-                loading="lazy"
-              />
-            </div>
+          <div className="accent-rule" />
+          <p className="section-label mb-2">Overarching Vision</p>
+          <h2 className="font-serif text-2xl text-gray-900 md:text-3xl">
+            Closing the BCI computing gap
+          </h2>
+          <div className="mt-6 max-w-3xl space-y-5 text-gray-600 leading-relaxed sm:space-y-6">
+            {vision.paragraphs.map((paragraph) => (
+              <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+            ))}
           </div>
+          <img
+            src={rodentValidationImage}
+            alt="Acorn rodent brain interfacing — wireless power, implantable system and probes, and wearables"
+            width={569}
+            height={198}
+            className="mt-10 block w-full h-auto border-0"
+            loading="lazy"
+          />
         </div>
       </section>
 

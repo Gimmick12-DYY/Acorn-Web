@@ -20,29 +20,24 @@ export default function ResearchPage() {
       />
 
       <section className="max-w-6xl mx-auto px-6 py-16">
-        <div className="grid items-center gap-10 md:grid-cols-2 md:gap-12 lg:gap-16">
-          <div className="min-w-0">
-            <div className="accent-rule" />
-            <p className="section-label mb-2">Intellectual Merit</p>
-            <h2 className="font-serif text-2xl text-gray-900 mb-6">
-              Scientific and technical foundations
-            </h2>
-            <div className="space-y-6 text-gray-600 leading-relaxed">
-              {intellectualMerit.paragraphs.map((paragraph) => (
-                <p key={paragraph.slice(0, 40)}>{paragraph}</p>
-              ))}
-            </div>
-          </div>
-
-          <div className="min-w-0 md:pl-2">
-            <img
-              src={layersDiagram}
-              alt="Acorn software and hardware stack — applications through MoLib, MoMA, and processor"
-              className="block w-full h-auto"
-              loading="lazy"
-            />
-          </div>
+        <div className="accent-rule" />
+        <p className="section-label mb-2">Intellectual Merit</p>
+        <h2 className="font-serif text-2xl text-gray-900 mb-6">
+          Scientific and technical foundations
+        </h2>
+        <div className="space-y-6 text-gray-600 leading-relaxed max-w-3xl">
+          {intellectualMerit.paragraphs.map((paragraph) => (
+            <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+          ))}
         </div>
+        <img
+          src={layersDiagram}
+          alt="Acorn software and hardware stack — applications through MoLib, MoMA, and processor"
+          width={1636}
+          height={1196}
+          className="mt-10 block w-full h-auto border-0"
+          loading="lazy"
+        />
       </section>
 
       <section className="border-y border-gray-200/80 bg-[#F5F0EA]">
