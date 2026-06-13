@@ -38,25 +38,34 @@ export function Navbar() {
             </div>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-0.5">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`px-2.5 py-2 text-sm font-medium rounded-md transition-colors ${
-                  isActive(link.href)
-                    ? 'text-white bg-white/15 hover:bg-white/20'
-                    : 'text-white/75 hover:text-white hover:bg-white/10'
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
+          <div className="hidden lg:flex items-center gap-2 shrink-0">
+            <nav className="flex items-center gap-0.5">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`px-2.5 py-2 text-sm font-medium rounded-md transition-colors ${
+                    isActive(link.href)
+                      ? 'text-white bg-white/15 hover:bg-white/20'
+                      : 'text-white/75 hover:text-white hover:bg-white/10'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+
+            <Link
+              href="mailto:contact@acorn-expedition.org?subject=Acorn%20Inquiry"
+              className="text-sm font-semibold btn-outline-light shrink-0"
+            >
+              Contact
+            </Link>
+          </div>
 
           <Link
             href="mailto:contact@acorn-expedition.org?subject=Acorn%20Inquiry"
-            className="hidden sm:inline-block text-sm font-semibold btn-outline-light shrink-0"
+            className="lg:hidden hidden sm:inline-block text-sm font-semibold btn-outline-light shrink-0"
           >
             Contact
           </Link>

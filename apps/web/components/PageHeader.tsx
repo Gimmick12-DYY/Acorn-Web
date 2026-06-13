@@ -22,7 +22,7 @@ export function PageHeader({ label, title, description, children, image }: PageH
         <div
           className={
             image
-              ? 'grid gap-10 md:grid-cols-2 md:gap-12 lg:gap-16 items-center'
+              ? 'grid gap-10 md:grid-cols-2 md:gap-12 lg:gap-16 items-start'
               : 'max-w-2xl'
           }
         >
@@ -39,13 +39,13 @@ export function PageHeader({ label, title, description, children, image }: PageH
           </div>
 
           {image && (
-            <div className="relative aspect-[3/2] overflow-hidden rounded-2xl bg-black">
+            <div className="min-w-0">
               <img
                 src={image.src}
                 alt={image.alt}
                 width={image.width}
                 height={image.height}
-                className="absolute inset-0 h-full w-full object-cover"
+                className="block w-full h-auto"
               />
             </div>
           )}

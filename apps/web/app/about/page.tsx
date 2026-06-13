@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { CapabilityGrid, PageHeader } from '../../components';
-import { aboutBrainImage, rodentValidationImage } from '../../content/images';
-import { broaderImpacts, institutions, overview, vision } from '../../content/site';
+import { aboutBrainImage, overviewPanels } from '../../content/images';
+import { broaderImpacts, institutions, overview, projectKeywords, vision } from '../../content/site';
 
 export const metadata = {
   title: 'About | Acorn',
@@ -22,7 +22,7 @@ export default function AboutPage() {
             Brain Integrated Computer Systems
           </>
         }
-        description="A collaborative expedition across Yale, Princeton, UNC Chapel Hill, Iowa State, and UC Riverside."
+        description={projectKeywords}
         image={{
           src: aboutBrainImage,
           alt: 'Stylized neural network brain representing Acorn brain integrated computing research',
@@ -46,7 +46,7 @@ export default function AboutPage() {
 
       <section className="border-y border-gray-200/80 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 md:py-16">
-          <div className="grid items-center gap-10 md:grid-cols-2 md:gap-12 lg:gap-16">
+          <div className="grid items-start gap-10 md:grid-cols-2 md:gap-12 lg:gap-16">
             <div className="min-w-0">
               <div className="accent-rule" />
               <p className="section-label mb-2">Overarching Vision</p>
@@ -62,11 +62,9 @@ export default function AboutPage() {
 
             <div className="min-w-0">
               <img
-                src={rodentValidationImage}
-                alt="Acorn rodent brain interfacing — wireless power, implantable system and probes, and wearables integration"
-                width={739}
-                height={324}
-                className="w-full h-auto"
+                src={overviewPanels[2].src}
+                alt={overviewPanels[2].alt}
+                className="block w-full h-auto"
                 loading="lazy"
               />
             </div>

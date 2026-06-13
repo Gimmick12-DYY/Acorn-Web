@@ -8,6 +8,10 @@ export const institutions = [
   'UC Riverside',
 ] as const;
 
+/** Short keyword line for About page header and similar summaries. */
+export const projectKeywords =
+  'VLBI · BCI · MoMA · MoLib · Motif-Driven Computing · Brain Integrated Computing';
+
 export const overview = {
   paragraphs: [
     'Brain-Computer Interfaces (BCIs) enable machines to directly read from and modulate biological neurons in the brain. Today, BCIs are being used to treat neurological disease and advance neuroscience research. In the future, BCIs are expected to help integrate artificial intelligence with natural intelligence, unleashing tremendous capacity to improve neural functioning.',
@@ -41,7 +45,7 @@ export const researchThrusts = [
     id: 'thrust-1',
     number: 1,
     title: 'The Motif Abstract Machine',
-    leaders: 'Pothukuchi (lead), Bhattacharjee, Buschman, Coifman, Lim, Liu, Manohar',
+    leaders: 'Bhattacharjee, Buschman, Coifman, Lim, Liu, Manohar, Pothukuchi',
     summary:
       'Define the Motif Abstract Machine (MoMA)—a foundational hardware-software interface for flexible BCI workloads. Characterize the landscape of neural processing algorithms, identify common sub-kernels amenable to ASIC implementation, and express neural processing with a novel space-time algebra.',
   },
@@ -49,7 +53,7 @@ export const researchThrusts = [
     id: 'thrust-2',
     number: 2,
     title: 'Motif-Driven Accelerator-Rich Hardware',
-    leaders: 'Bhattacharjee (lead), Lim, Liu, Manohar, Natarajan, Khandelwal, Pothukuchi',
+    leaders: 'Bhattacharjee, Khandelwal, Lim, Liu, Manohar, Natarajan, Pothukuchi',
     summary:
       'Design hundreds of power-efficient ASIC accelerators tailored to BCI workloads, using high-level synthesis and custom circuit techniques. Partition algorithms across ASICs to maximize system-level performance per watt while minimizing communication overhead between accelerators.',
   },
@@ -57,7 +61,7 @@ export const researchThrusts = [
     id: 'thrust-3',
     number: 3,
     title: 'Motif-Driven Accelerator-Rich Systems Software',
-    leaders: 'Zhong (lead), Bhattacharjee, Khandelwal, Lim, Pothukuchi',
+    leaders: 'Bhattacharjee, Khandelwal, Lim, Pothukuchi, Zhong',
     summary:
       'Build a new software stack—compilers, runtimes, and operating system support—for motif-guided execution. Enable programming in MATLAB and Python while statically generating efficient accelerator schedules from motif transitions, dramatically simplifying the control plane.',
   },
@@ -65,7 +69,7 @@ export const researchThrusts = [
     id: 'thrust-4',
     number: 4,
     title: 'Integrated Wireless Communication & Power Delivery',
-    leaders: 'Manohar (lead), Natarajan',
+    leaders: 'Manohar, Natarajan',
     summary:
       'Achieve breakthrough 10-meter untethered BCI operation at milliwatt-scale power through long-range RF powering and energy-proportional ultra-wideband wireless links. Enable patients to communicate with wearables and home devices without exceeding strict thermal limits.',
   },
@@ -73,7 +77,7 @@ export const researchThrusts = [
     id: 'thrust-5',
     number: 5,
     title: 'Cognitive Prosthetic BCI via Rodent Brain Interfacing',
-    leaders: 'Buschman (lead), Bhattacharjee, Pothukuchi',
+    leaders: 'Bhattacharjee, Buschman, Pothukuchi',
     summary:
       'Validate Acorn by interfacing with a rodent brain in real time—detecting neural motifs, dynamically allocating compute, and adaptively intervening to improve associative learning. Lays the groundwork for BCIs that restore cognitive functionality lost to disease or injury.',
   },

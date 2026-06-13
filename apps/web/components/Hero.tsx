@@ -40,7 +40,7 @@ export function Hero() {
               Latest News
             </Link>
             <Link href="/about" className="btn-outline">
-              About the Expedition
+              About the Expeditions
             </Link>
           </div>
         </div>

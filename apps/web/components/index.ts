@@ -8,6 +8,7 @@ export { AcornLogo } from './AcornLogo';
 export { Footer } from './Footer';
 export { Card } from './Card';
 export { PersonCard } from './PersonCard';
+export { PeopleListSection } from './PeopleListSection';
 export { PersonAvatar } from './PersonAvatar';
 export { PartnerFlipCard } from './PartnerFlipCard';
 export { CapabilityGrid } from './CapabilityGrid';
